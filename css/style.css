@@ -1,15 +1,75 @@
-ul{
+/*
+CSS Precendence
+
+Element (ex UL, Div)
+Attribute id (id='myId')
+Atrribute class (class='myClass')
+!Important (overides all, except other !importants) 
+
+ul { 
+    color:red;
+}
+
+.myclass {
+    //will not overide
+    color: green;
+}
+
+ul.myclass {
+    //will overide
+    color: green;
+}
+
+
+
+id='myId'
+
+<div id='myId' class='myId'>My Div Hello Aziz!</div>
+
+div {
+    color: white;
+}
+
+#myId {
+    color: red;
+}
+
+.myId { 
+    color: green;
+}
+
+div.myId {
+    color: purple;
+}
+
+
+Very Very Evil!!!! ---> !Important
+
+div.myId {
+    color: yellow!Important;
+}
+
+
+
+
+*/
+
+ul.navbar{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
     background-color: rgb(223, 217, 217);
+    position: fixed;
+    height: 100%;
+    width: 8em;
+   
 }
-li{
+.navbar li{
     float: left;
 }
 li a, .dropbtn{
-    display: inline-block;
+    display: block;
     color: rgb(10, 121, 218);
     text-align: center;
     padding: 14px 16px;
@@ -38,4 +98,36 @@ li.dropdown{
 }
 .dropdown:hover .dropdown-items{
     display: block;
+}
+
+
+
+/* Media Queries */
+
+/* Phone */
+@media screen and (max-width: 39.9375em) {
+/* not write alot in here */
+}
+
+
+
+/* Tablet */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    ul.navbar{
+        width: 100%;
+        height: 15%;
+    }
+    
+}
+
+
+
+/* Desktop and up */
+@media screen and (min-width: 64em) {
+ul.navbar{
+    width: 100%;
+    height: 15%;
+    display: block;
+}
+
 }
