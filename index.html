@@ -8,26 +8,43 @@
     <title>Responsive Nav Menu</title>
 </head>
 <body>
-    
-<ul class="navbar">
-    <li> <a class="active" href="#home"> Home </a></li>
-    <li> <a href="#docs"> Docs </a></li>
-    <li> <a href="#news"> News </a></li>
-    <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-        <div class="dropdown-items">
-            <a href="#first"> First Item </a>
-            <a href="#second"> Second Item </a>
-            <a href="#third"> Third Item </a>
-            <a href="#first"> First Item </a>
-            <a href="#second"> Second Item </a>
-            <a href="#third"> Third Item </a>
-            <a href="#first"> First Item </a>
-            <a href="#second"> Second Item </a>
-            <a href="#third"> Third Item </a>
-        </div>      
-    </li>
-</ul>
+
+<div class="nav-container">
+    <nav class="navbar">
+        <h1 id="navbar-logo">Some Logo / Banner</h1>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span> 
+        </div>
+
+    </nav>
+
+    <ul class="navbar">
+        <li> <a href="#home" class="nav-links">Home</a></li>
+        <li> <a href="#docs"class="nav-links">Docs</a></li>
+        <li> <a href="#news"class="nav-links">News</a></li>
+        
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+            <div class="dropdown-items">
+                <a href="#first"> 1st Item </a>
+                <a href="#second"> 2nd Item </a>
+                <a href="#third"> 3rd Item </a>
+                <a href="#first"> 4th Item </a>
+                <a href="#second"> 5th Item </a>
+                <a href="#third"> 6th Item </a>
+                <a href="#first"> 7th Item </a>
+                <a href="#second"> 8th Item </a>
+                <a href="#third"> 9th Item </a>
+            </div>      
+        </li>
+        
+        <li> <a href="#"class="nav-links">Nav button</a></li>
+    </ul>
+
+</div>
     
     
 </body>
