@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <title>Responsive Nav Menu</title>
 </head>
+
 <body>
 
-<div class="nav-container">
-    <nav class="navbar">
-        <h1 id="navbar-logo">Some Logo / Banner</h1>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span> 
-        </div>
+    <div class="nav-container">
+        <ul class="navbar" id="myTopNav">
+            <li> <a href="#home" class="nav-links">Home</a></li>
+            <li> <a href="#docs" class="nav-links">Docs</a></li>
+            <li> <a href="#news" class="nav-links">News</a></li>
 
-    </nav>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                <div class="dropdown-items">
+                    <a href="#first"> 1st Item </a>
+                    <a href="#second"> 2nd Item </a>
+                    <a href="#third"> 3rd Item </a>
+                    <a href="#first"> 4th Item </a>
+                    <a href="#second"> 5th Item </a>
+                    <a href="#third"> 6th Item </a>
+                    <a href="#first"> 7th Item </a>
+                    <a href="#second"> 8th Item </a>
+                    <a href="#third"> 9th Item </a>
+                </div>
+            </li>
+            <li> <a href="javascript:void(0);" class="icon">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+        </ul>
 
-    <ul class="navbar">
-        <li> <a href="#home" class="nav-links">Home</a></li>
-        <li> <a href="#docs"class="nav-links">Docs</a></li>
-        <li> <a href="#news"class="nav-links">News</a></li>
-        
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-            <div class="dropdown-items">
-                <a href="#first"> 1st Item </a>
-                <a href="#second"> 2nd Item </a>
-                <a href="#third"> 3rd Item </a>
-                <a href="#first"> 4th Item </a>
-                <a href="#second"> 5th Item </a>
-                <a href="#third"> 6th Item </a>
-                <a href="#first"> 7th Item </a>
-                <a href="#second"> 8th Item </a>
-                <a href="#third"> 9th Item </a>
-            </div>      
-        </li>
-        
-        <li> <a href="#"class="nav-links">Nav button</a></li>
-    </ul>
+    </div>
 
-</div>
-    
-    
+
 </body>
+
 </html>
