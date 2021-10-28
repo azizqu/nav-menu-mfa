@@ -62,7 +62,7 @@ div.myId {
 
 #navbar-logo{
     text-align: center;
-    position: static;
+    
 }
 
 div.nav-container{
@@ -86,7 +86,7 @@ ul.navbar{
 }
 li a, .dropbtn{
     display: block;
-    color: rgb(10, 121, 218);
+    color: rgb(231, 236, 241);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -104,7 +104,7 @@ li.dropdown{
     z-index: 1;
 }
 .dropdown-items a{
-    color: black;
+    color: rgb(238, 49, 49);
     padding: 12px 16px;
     display: block;
     text-align: left;
@@ -126,7 +126,11 @@ li.dropdown{
 @media screen and (max-width: 39.9375em) {
 /* not write alot in here */
 ul.navbar{
-    background-color: rgb(241, 217, 217);
+    min-height: 100%;
+    background-color:rgb(8, 91, 143);
+}
+.dropdown-items a{
+    float: right;
 }
 
 }
@@ -136,8 +140,18 @@ ul.navbar{
 /* Tablet */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
     ul.navbar{
-        width: 100%;
+        min-width: 100%;
         max-height: 40px;
+        position: fixed;
+        display: block;
+        background-color:rgb(8, 91, 143);
+        padding-left: 1em;
+    }
+
+    #navbar-logo{
+        text-align: right;
+        padding-right: 1em;
+        color: tomato;
     }
     
 }
@@ -151,9 +165,13 @@ ul.navbar{
     max-height: 40px;
     position: fixed;
     display: block;
-    background-color: rgb(245, 190, 190);
-    
-    
+    color: white;
+    background-color:rgb(8, 91, 143);
+    padding-left: 1em;
+}
+#navbar-logo{
+    text-align: right;
+    padding-right: 1em;
 }
 
 
