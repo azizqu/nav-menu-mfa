@@ -93,9 +93,15 @@ li a, .dropbtn{
     text-decoration: none;
 }
 
+/* li a:hover{
+    background-color: red;
+} */
+
+
 li a:hover, .dropdown:hover .dropbtn{
     background-color: red;
 }
+
 li.dropdown{
     display: inline-block;
     position: relative;
@@ -104,20 +110,30 @@ li.dropdown{
     display: none;
     position: absolute;
     min-width: 160px;
-    z-index: 1;
-    background-color: red;
-    left: 6.25em;
+    /* z-index: 1; */
+    background-color: rgb(71, 71, 71);
+    left: 5em;
     top: 0;
+    text-align: center;
 }
 .dropdown-items a{
     color: white;
-    padding: 12px 16px;
+    padding: 10px 14px;
     display: inline-block;
-    text-align: left;
 }
+div.dropdown-items a:hover{
+    background-color: rgb(117, 121, 121);
+}
+
+
+/* .dropdown-items:hover{
+    background-color: aquamarine;
+} */
+
 
 .dropdown:hover .dropdown-items{
     display: block;
+    
 }
 
 /* Media Queries */
@@ -138,7 +154,7 @@ ul.navbar{
 
 }
 .dropdown-items{
-   background-color: rgb(230, 149, 120);
+   background-color: rgb(75, 73, 73);
    position: relative;
    left: 0;
 
