@@ -60,15 +60,17 @@ div.myId {
     padding: 0;
 }
 
-#navbar-logo{
-    text-align: center;
-    
-}
-
 /* div.nav-container{
-    width: 100%;
-    background-color: cadetblue;
+    background: rgb(8, 91, 143);
+    padding: .5rem;
+    line-height: 34px;
+    height: 3em;
+    display: block;
 } */
+
+div.nav-container{
+    background-color: rgb(8, 91, 143);
+}
 
 ul.navbar{
     list-style-type: none;
@@ -76,19 +78,18 @@ ul.navbar{
     padding: 0; */
     /* overflow: auto; */
     background-color: rgb(223, 217, 217);
-    position: fixed;
     max-height: 100%;
-    width: 8em;
-   
+    display: flex;
+ 
+
 }
-.navbar li{
-    float: left;
-}
+
 li a, .dropbtn{
-    display: block;
+    display: inline-block;
+    position: relative;
     color: rgb(231, 236, 241);
-    text-align: center;
-    padding: 14px 16px;
+    /* text-align: center; */
+    padding: 0.5em;
     text-decoration: none;
 }
 
@@ -114,16 +115,10 @@ li.dropdown{
     display: inline-block;
     text-align: left;
 }
-.dropdown-items a:hover {
-    
-}
+
 .dropdown:hover .dropdown-items{
     display: block;
 }
-
-
-
-
 
 /* Media Queries */
 
@@ -131,24 +126,45 @@ li.dropdown{
 @media screen and (max-width: 39.9375em) {
 
 ul.navbar{
-    min-height: 100%;
+    min-height: 50%;
     background-color:rgb(8, 91, 143);
     /* display: none; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-.navbar li:not(:first-of-type):not(:last-of-type){
+.navbar li{
     display: none;
 
 }
+.dropdown-items{
+   background-color: rgb(230, 149, 120);
+   position: relative;
+   left: 0;
+
+}
+.dropdown-items a{
+    display: block;
+}
+
+li a, a.dropbtn{
+    color: rgb(252, 255, 249);
+    display: flex;
+    position: relative;
+    
+}
 .navbar.responsive{
     position: absolute;
+    display: flex;
     min-height: 100%;
+    width: 100%;
+    background-color: rgb(8, 91, 143);
 
 }
 
-
-/* This is burger icon - made relative and icon shifts to bottom of list*/
+/* This is burger icon */
 .navbar.navbar.responsive .icon{
-    position: relative;
+    position: absolute;
     right: 0;
     top: 0;
     
@@ -160,8 +176,14 @@ ul.navbar{
     
 }
 
+a.icon-close{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
+}
 
 
 /* Tablet */
@@ -169,18 +191,16 @@ ul.navbar{
     ul.navbar{
         min-width: 100%;
         max-height: 40px;
-        position: fixed;
-        display: block;
+        display: flex;
         background-color:rgb(8, 91, 143);
         padding-left: 1em;
+        justify-content: center;
     }
 
-    #navbar-logo{
-        text-align: right;
-        padding-right: 1em;
-        color: tomato;
-    }
     a.icon{
+        display: none;
+    }
+    a.icon-close{
         display: none;
     }
     
@@ -188,24 +208,22 @@ ul.navbar{
 }
 
 
-
 /* Desktop and up */
 @media screen and (min-width: 64em) {
 ul.navbar{
     min-width: 100%;
     max-height: 40px;
-    position: fixed;
-    display: block;
+    display: flex;
     color: white;
     background-color:rgb(8, 91, 143);
     padding-left: 1em;
+    justify-content: center;
 }
-#navbar-logo{
-    text-align: right;
-    padding-right: 1em;
-}
-
+/* hides burger icon on larger displays */
 a.icon{
+    display: none;
+}
+a.icon-close{
     display: none;
 }
 
