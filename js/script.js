@@ -1,45 +1,18 @@
-let navList = document.getElementsByClassName('icon');
-console.log(navList);
+const hamburger = document.getElementById("hamburger");
+const closeBtn = document.getElementById("close-btn");
+const menu = document.getElementById("nav");
 
-let hamburger = navList[0];
+hamburger.addEventListener("click", function () {
+  if (!menu.classList.contains('hamburger')) {
+    menu.className += ' hamburger';
+    closeBtn.style.display = 'block';
+  } else {
+    menu.classList.remove('hamburger');
+    closeBtn.style.display = 'none';
+  }
+});
 
-hamburger.addEventListener('click',function(){
-    
-        const menu = document.getElementById("myTopNav");
-        const close = document.getElementById("close-btn");
-        if(menu.className ==="navbar"){
-            menu.className += " responsive";
-            close.style.display = "block"
-        } 
-        // else{
-        //     menu.className = "navbar";
-        // }
-        else{
-            close.style.display = "none"
-        }
-        
-    })
-
-    let closeBtn = document.getElementsByClassName('icon-close');
-    console.log(closeBtn)
-    let closeHam = closeBtn[0];
-    //close ONLY
-    closeHam.addEventListener('click', function(){
-        const x = document.getElementById("myTopNav");
-        const close = document.getElementById("close-btn");
-        if(x.className != "navbar"){
-            if(x.className === "navbar"){
-                x.className += " responsive";
-                
-                
-            }else{
-                x.className = "navbar";
-                close.style.display = "none"
-                
-            }
-            
-        }
-       
-    })
-
-
+closeBtn.addEventListener("click", function () {
+    menu.className = 'navbar'
+    closeBtn.style.display = 'none'
+});
