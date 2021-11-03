@@ -164,11 +164,6 @@ a.icon-close::after {
     font-size: 1.7em;
   }
 
-  li a:hover,
-  .dropdown:hover .dropbtn {
-    background-color: rgb(88, 90, 94);
-  }
-
   li.dropdown {
     display: inline-block;
     position: relative;
@@ -221,11 +216,6 @@ a.icon-close::after {
     padding: 0.5em;
     text-decoration: none;
     font-size: 1.7em;
-  }
-
-  li a:hover,
-  .dropdown:hover .dropbtn {
-    background-color: rgb(88, 90, 94);
   }
 
   .dropdown-items {
