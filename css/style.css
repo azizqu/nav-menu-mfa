@@ -2,10 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
 div.nav-container {
-  background-color: rgb(51, 171, 240);
+  background-color: rgb(33, 153, 209);
   height: 50px;
 }
 
@@ -21,7 +22,7 @@ ul.hamburger {
   min-width: 100%;
   max-height: 100%;
   display: none;
-  background-color: rgb(51, 171, 240);
+  background-color: rgb(33, 153, 209);
   justify-content: center;
   text-align: center;
   list-style-type: none;
@@ -61,6 +62,7 @@ li a,
   padding: 0.5em;
   text-decoration: none;
   left: 0.5em;
+  font-size: 2em;
   border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
     -moz-border-radius: 0.5em;
@@ -90,6 +92,7 @@ li.dropdown {
   left: 0.5em;
   top: 2em;
   text-align: center;
+
 }
 .dropdown-items a {
   color: white;
@@ -104,6 +107,8 @@ div.dropdown-items a:hover {
 .fa{
     color:white;
     margin-left: 0.25em;
+    font-size: 2em;
+    padding: 2px;
 }
 /* Close icon  */
 a.icon-close {
@@ -113,7 +118,16 @@ a.icon-close {
   right: 0;
   color: white;
   margin-right: 0.25em;
+  text-decoration: none;
 }
+a.icon-close::after {
+    content: "X";
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 2px;
+}
+
 
 
 /* Media Queries */
@@ -125,7 +139,7 @@ a.icon-close {
     min-width: 100%;
     max-height: 40px;
     display: flex;
-    background-color: rgb(8, 91, 143);
+    background-color: rgb(33, 153, 209);
     padding-left: 1em;
     justify-content: center;
     list-style-type: none;
@@ -183,7 +197,7 @@ a.icon-close {
     max-height: 40px;
     display: flex;
     color: white;
-    background-color: rgb(8, 91, 143);
+    background-color: rgb(33, 153, 209);
     padding-left: 1em;
     justify-content: center;
     list-style-type: none;
