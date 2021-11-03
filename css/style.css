@@ -1,135 +1,154 @@
-/*
-CSS Precendence
-
-Element (ex UL, Div)
-Attribute id (id='myId')
-Atrribute class (class='myClass')
-!Important (overides all, except other !importants) 
-
-ul { 
-    color:red;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.myclass {
-    //will not overide
-    color: green;
+div.nav-container {
+  background-color: rgb(8, 91, 143);
 }
 
-ul.myclass {
-    //will overide
-    color: green;
+.dropdown:hover .dropdown-items {
+  display: block;
 }
 
-
-
-id='myId'
-
-<div id='myId' class='myId'>My Div Hello Aziz!</div>
-
-div {
-    color: white;
+ul.hamburger {
+  display: block;
 }
 
-#myId {
-    color: red;
-}
-
-.myId { 
-    color: green;
-}
-
-div.myId {
-    color: purple;
-}
-
-
-Very Very Evil!!!! ---> !Important
-
-div.myId {
-    color: yellow!Important;
-}
-
-
-
-
-*/
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-div.nav-container{
-    background-color: rgb(8, 91, 143);
-}
-
-
-.dropdown:hover .dropdown-items{
-    display: block;
-}
-
-/* Media Queries */
-
-/* Phone */
-/* @media screen and (max-width: 39.9375em) { */
-
-ul.hamburger {display: block;}
-
-.navbar{
-    min-width: 100%;
-    max-height: 100%;
-    display: none;
-    background-color:rgb(8, 91, 143);
-    justify-content: center;
-    text-align: center;
-    list-style-type: none;
-    animation:rotateMenu 400ms ease-in-out forwards;
-    -webkit-animation:rotateMenu 400ms ease-in-out forwards;
-    transform-origin: top center;
+.navbar {
+  min-width: 100%;
+  max-height: 100%;
+  display: none;
+  background-color: rgb(28, 117, 172);
+  justify-content: center;
+  text-align: center;
+  list-style-type: none;
+  animation: rotateMenu 400ms ease-in-out forwards;
+  -webkit-animation: rotateMenu 400ms ease-in-out forwards;
+  transform-origin: top center;
 }
 @keyframes rotateMenu {
-    0% {
-        transform: rotateX(-90deg);
-        -webkit-transform: rotateX(-90deg);
-        -moz-transform: rotateX(-90deg);
-        -ms-transform: rotateX(-90deg);
-        -o-transform: rotateX(-90deg);
-}
-70% {
+  0% {
+    transform: rotateX(-90deg);
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+  }
+  70% {
     transform: rotateX(20deg);
     -webkit-transform: rotateX(20deg);
     -moz-transform: rotateX(20deg);
     -ms-transform: rotateX(20deg);
     -o-transform: rotateX(20deg);
-}
-100%{
+  }
+  100% {
     transform: rotateX(0deg);
     -webkit-transform: rotateX(0deg);
     -moz-transform: rotateX(0deg);
     -ms-transform: rotateX(0deg);
     -o-transform: rotateX(0deg);
-}
+  }
 }
 
-li a, .dropbtn{
+li a,
+.dropbtn {
+  display: inline-block;
+  position: relative;
+  color: rgb(231, 236, 241);
+  padding: 0.5em;
+  text-decoration: none;
+  left: 0.5em;
+  border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+  background-color: rgb(88, 90, 94);
+  transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+li.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-items {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  background-color: rgb(71, 71, 71);
+  left: 0.5em;
+  top: 2em;
+  text-align: center;
+}
+.dropdown-items a {
+  color: white;
+  padding: 10px 14px;
+  display: inline-block;
+}
+div.dropdown-items a:hover {
+  background-color: rgb(117, 121, 121);
+}
+
+/* Hamburger icon */
+.fa{
+    color: black;
+    margin-left: 0.25em;
+}
+/* Close icon  */
+a.icon-close {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: black;
+  margin-right: 0.25em;
+}
+
+
+/* Media Queries */
+
+/* Tablet */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  ul.navbar,
+  #nav {
+    min-width: 100%;
+    max-height: 40px;
+    display: flex;
+    background-color: rgb(8, 91, 143);
+    padding-left: 1em;
+    justify-content: center;
+    list-style-type: none;
+  }
+
+  li a,
+  .dropbtn {
     display: inline-block;
     position: relative;
     color: rgb(231, 236, 241);
     padding: 0.5em;
     text-decoration: none;
-    left:0.5em;
-}
+  }
 
-li a:hover, .dropdown:hover .dropbtn{
-    background-color: red;
-}
+  li a:hover,
+  .dropdown:hover .dropbtn {
+    background-color: rgb(88, 90, 94);
+  }
 
-li.dropdown{
+  li.dropdown {
     display: inline-block;
     position: relative;
-}
-.dropdown-items{
+  }
+  .dropdown-items {
     display: none;
     position: absolute;
     min-width: 160px;
@@ -137,129 +156,53 @@ li.dropdown{
     left: 0.5em;
     top: 2em;
     text-align: center;
-}
-.dropdown-items a{
+  }
+  .dropdown-items a {
     color: white;
     padding: 10px 14px;
     display: inline-block;
-}
-div.dropdown-items a:hover{
+  }
+  div.dropdown-items a:hover {
     background-color: rgb(117, 121, 121);
-}
+  }
 
-a.icon-close{
+  a.icon {
     display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
+  }
+  a.icon-close {
+    display: none;
+  }
 }
-
-/* Tablet */
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {
-    ul.navbar, #nav{
-        min-width: 100%;
-        max-height: 40px;
-        display: flex;
-        background-color:rgb(8, 91, 143);
-        padding-left: 1em;
-        justify-content: center;
-        list-style-type: none;
-    }
-
-    li a, .dropbtn{
-        display: inline-block;
-        position: relative;
-        color: rgb(231, 236, 241);
-        /*text-align: center;
-        */padding: 0.5em;
-        text-decoration: none;
-        border-radius:0.5em;
-        -webkit-border-radius:0.5em;
-        -moz-border-radius:0.5em;
-        -ms-border-radius:0.5em;
-        -o-border-radius:0.5em;
-}
-
-    li a:hover, .dropdown:hover .dropbtn{
-        background-color: red;
-        transition: all .5s ease-in-out;
-        -webkit-transition: all .5s ease-in-out;
-        -moz-transition: all .5s ease-in-out;
-        -ms-transition: all .5s ease-in-out;
-        -o-transition: all .5s ease-in-out;
-    }
-
-    li.dropdown{
-        display: inline-block;
-        position: relative;
-}
-    .dropdown-items{
-        display: none;
-        position: absolute;
-        min-width: 160px;
-        background-color: rgb(71, 71, 71);
-        left: 0.5em;
-        top: 2em;
-        text-align: center;
-}
-    .dropdown-items a{
-        color: white;
-        padding: 10px 14px;
-        display: inline-block;
-    }
-    div.dropdown-items a:hover{
-        background-color: rgb(117, 121, 121);
-    }
-
-    a.icon{
-        display: none;
-    }
-    a.icon-close{
-        display: none;
-    }
-}
-
 
 /* Desktop and up */
 @media screen and (min-width: 64em) {
-ul.navbar, #nav{
+  ul.navbar,
+  #nav {
     min-width: 100%;
     max-height: 40px;
     display: flex;
     color: white;
-    background-color:rgb(8, 91, 143);
+    background-color: rgb(8, 91, 143);
     padding-left: 1em;
     justify-content: center;
     list-style-type: none;
-}
+  }
 
-li a, .dropbtn{
+  li a,
+  .dropbtn {
     display: inline-block;
     position: relative;
     color: rgb(231, 236, 241);
     padding: 0.5em;
     text-decoration: none;
-    border-radius:0.5em;
-    -webkit-border-radius:0.5em;
-    -moz-border-radius:0.5em;
-    -ms-border-radius:0.5em;
-    -o-border-radius:0.5em;
-}
+  }
 
-li a:hover, .dropdown:hover .dropbtn{
-    background-color: red;
-    transition: all .5s ease-in-out;
-        -webkit-transition: all .5s ease-in-out;
-        -moz-transition: all .5s ease-in-out;
-        -ms-transition: all .5s ease-in-out;
-        -o-transition: all .5s ease-in-out;
-}
+  li a:hover,
+  .dropdown:hover .dropbtn {
+    background-color: rgb(88, 90, 94);
+  }
 
-/* li.dropdown{
-    display: inline-block;
-    position: relative;
-} */
-.dropdown-items{
+  .dropdown-items {
     display: none;
     position: absolute;
     min-width: 160px;
@@ -267,23 +210,21 @@ li a:hover, .dropdown:hover .dropbtn{
     left: 0.5em;
     top: 2em;
     text-align: center;
-}
-.dropdown-items a{
+  }
+  .dropdown-items a {
     color: white;
     padding: 10px 14px;
     display: inline-block;
-}
-div.dropdown-items a:hover{
+  }
+  div.dropdown-items a:hover {
     background-color: rgb(117, 121, 121);
-}
+  }
 
-/* hides burger icon on larger displays */
-a.icon{
+  /* hides burger icon on larger displays */
+  a.icon {
     display: none;
-}
-a.icon-close{
+  }
+  a.icon-close {
     display: none;
-}
-
-
+  }
 }
