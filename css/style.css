@@ -5,7 +5,8 @@
 }
 
 div.nav-container {
-  background-color: rgb(8, 91, 143);
+  background-color: rgb(51, 171, 240);
+  height: 50px;
 }
 
 .dropdown:hover .dropdown-items {
@@ -20,7 +21,7 @@ ul.hamburger {
   min-width: 100%;
   max-height: 100%;
   display: none;
-  background-color: rgb(28, 117, 172);
+  background-color: rgb(51, 171, 240);
   justify-content: center;
   text-align: center;
   list-style-type: none;
@@ -101,7 +102,7 @@ div.dropdown-items a:hover {
 
 /* Hamburger icon */
 .fa{
-    color: black;
+    color:white;
     margin-left: 0.25em;
 }
 /* Close icon  */
@@ -110,7 +111,7 @@ a.icon-close {
   position: absolute;
   top: 0;
   right: 0;
-  color: black;
+  color: white;
   margin-right: 0.25em;
 }
 
