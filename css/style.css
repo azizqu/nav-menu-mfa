@@ -6,22 +6,18 @@
 }
 
 div.nav-container {
-  /* background-color: rgb(33, 153, 209); */
-  /* background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%); */
-  background: rgb(174, 197, 238);
-  background: linear-gradient(
-    360deg,
-    rgba(174, 197, 238, 1) 0%,
-    rgba(37, 66, 96, 1) 100%
-  );
+  background-color: rgba(37, 66, 96, 1);
   height: 60px;
 }
 
 .dropdown:hover .dropdown-items {
   display: block;
 }
-.dropdown-modal:hover .modal-items{
-    display: block;
+.dropdown-modal:hover .modal-items {
+  display: block;
+}
+.modal-items {
+  position: relative;
 }
 
 ul.hamburger {
@@ -32,11 +28,10 @@ ul.hamburger {
   min-width: 100%;
   max-height: 100%;
   display: none;
-  /* background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%); */
-  background: rgb(174, 197, 238);
+  background: rgba(37, 66, 96, 1);
   background: linear-gradient(
-    180deg,
-    rgba(174, 197, 238, 1) 0%,
+    360deg,
+    rgb(121, 149, 197) 0%,
     rgba(37, 66, 96, 1) 100%
   );
   justify-content: center;
@@ -101,8 +96,8 @@ li.dropdown {
   display: inline-block;
   position: relative;
 }
-.modal-items{
-    display: none;
+.modal-items {
+  display: none;
 }
 
 .dropdown-items {
@@ -110,10 +105,10 @@ li.dropdown {
   position: absolute;
   min-width: 160px;
   /* background-color: rgb(71, 71, 71); */
-  background: rgb(174, 197, 238);
+  background: rgba(37, 66, 96, 1);
   background: linear-gradient(
-    180deg,
-    rgba(174, 197, 238, 1) 0%,
+    360deg,
+    rgb(101, 127, 172) 0%,
     rgba(37, 66, 96, 1) 100%
   );
   opacity: 0.8;
@@ -152,7 +147,7 @@ div.dropdown-items a:hover {
 a.icon-close {
   display: none;
   position: absolute;
-  top: 0;
+  top: 0.5em;
   right: 0;
   color: white;
   padding: 10px;
@@ -162,7 +157,7 @@ a.icon-close::after {
   content: "X";
   color: white;
   font-weight: bold;
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 /*************** Media Queries **************/
@@ -172,7 +167,6 @@ a.icon-close::after {
   div.nav-container {
     background: none;
   }
-
   ul.navbar,
   #nav {
     min-width: 100%;
@@ -181,6 +175,7 @@ a.icon-close::after {
     justify-content: center;
     list-style-type: none;
     box-shadow: none;
+    background: rgba(37, 66, 96, 1);
   }
 
   li a,
@@ -201,12 +196,12 @@ a.icon-close::after {
     display: none;
     position: absolute;
     min-width: 160px;
-    background: rgb(174, 197, 238);
-    background: linear-gradient(
-      180deg,
-      rgba(174, 197, 238, 1) 0%,
-      rgba(37, 66, 96, 1) 100%
-    );
+    background: rgba(37, 66, 96, 1);
+  background: linear-gradient(
+    360deg,
+    rgb(138, 172, 231) 0%,
+    rgba(37, 66, 96, 1) 100%
+  );
     opacity: 0.95;
     left: 2em;
     top: 7.4em;
@@ -232,9 +227,9 @@ a.icon-close::after {
 
 /* Desktop and up */
 @media screen and (min-width: 64em) {
-    div.nav-container {
-        background: none;
-      }
+  div.nav-container {
+    background: none;
+  }
   ul.navbar,
   #nav {
     min-width: 100%;
@@ -243,6 +238,7 @@ a.icon-close::after {
     justify-content: center;
     list-style-type: none;
     box-shadow: none;
+    background: rgba(37, 66, 96, 1);
   }
 
   li a,
@@ -259,10 +255,10 @@ a.icon-close::after {
     display: none;
     position: absolute;
     min-width: 160px;
-    background: rgb(174, 197, 238);
+    background: rgba(37, 66, 96, 1);
     background: linear-gradient(
-      180deg,
-      rgba(174, 197, 238, 1) 0%,
+      360deg,
+      rgb(138, 172, 231) 0%,
       rgba(37, 66, 96, 1) 100%
     );
     opacity: 0.95;
