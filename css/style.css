@@ -13,12 +13,45 @@ div.nav-container {
 .dropdown:hover .dropdown-items {
   display: block;
 }
-.dropdown-modal:hover .modal-items {
-  display: block;
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 45%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+
 }
-.modal-items {
-  position: relative;
+.dropdown-modal:hover .modal {
+  display: inline-block;
+  top:0;
+  left:6em;
+  padding: 0;
 }
+.modal a{
+    display: block;
+    font-size: 1.5em;
+    text-align: center;
+    left:0;
+}
+.closed{
+    display: none;
+}
+
+/* Modal close icon */
+a.modal-close-btn {
+    top:0;
+    right:0;
+    color: white;
+    left: 3em;
+    padding: 0;
+    display: inline-block;
+}
+a.modal-close-btn:hover{
+    background-color:inherit;
+}
+
 
 ul.hamburger {
   display: block;
@@ -143,7 +176,7 @@ div.dropdown-items a:hover {
   font-size: 2.5em;
   padding: 10px;
 }
-/* Close icon  */
+/* Close icon hamburger  */
 a.icon-close {
   display: none;
   position: absolute;
@@ -159,6 +192,10 @@ a.icon-close::after {
   font-weight: bold;
   font-size: 1.5em;
 }
+
+
+
+
 
 /*************** Media Queries **************/
 

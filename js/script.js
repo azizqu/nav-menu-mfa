@@ -1,6 +1,8 @@
 const hamburger = document.getElementById("hamburger");
 const closeBtn = document.getElementById("close-btn");
 const menu = document.getElementById("nav");
+const modal = document.getElementById("myModal")
+const modalClose = document.getElementById("m-close-btn");
 
 hamburger.addEventListener("click", function () {
   if (!menu.classList.contains('hamburger')) {
@@ -16,3 +18,8 @@ closeBtn.addEventListener("click", function () {
     menu.className = 'navbar'
     closeBtn.style.display = 'none'
 });
+
+modalClose.addEventListener("click", function(){
+    modal.style.display = 'none'
+    // modal.className += ' closed'
+})
