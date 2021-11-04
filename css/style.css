@@ -13,6 +13,19 @@ div.nav-container {
 .dropdown:hover .dropdown-items {
   display: block;
 }
+li.dropdown-modal:hover .modal{
+    display: inline-block;
+    top:0;
+    left:6em;
+    padding: 0;
+  }
+
+li.dropdown-modal:hover .modal.closed{
+      display: inline-block;
+      top:0;
+      left:6em;
+      padding: 0;
+  }
 
 .modal{
     display: none;
@@ -21,13 +34,14 @@ div.nav-container {
     width: 45%;
     height: 100%;
     background-color: rgba(0,0,0,0.9);
-
 }
-.dropdown-modal:hover .modal {
-  display: inline-block;
-  top:0;
-  left:6em;
-  padding: 0;
+.modal.closed{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 45%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
 }
 .modal a{
     display: block;
@@ -35,10 +49,10 @@ div.nav-container {
     text-align: center;
     left:0;
 }
-.closed{
-    display: none;
-}
 
+/* div#myModal.modal.closed{
+    display: none;
+} */
 /* Modal close icon */
 a.modal-close-btn {
     top:0;

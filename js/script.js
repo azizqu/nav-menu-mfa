@@ -20,6 +20,5 @@ closeBtn.addEventListener("click", function () {
 });
 
 modalClose.addEventListener("click", function(){
-    modal.style.display = 'none'
-    // modal.className += ' closed'
+        modal.classList.toggle('closed');
 })
