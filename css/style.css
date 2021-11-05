@@ -14,36 +14,35 @@ div.nav-container {
   display: block;
 }
 
-
-.modal{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    width: 55%;
-    max-height: 100%;
-    top:0;
-    left:6em;
-    padding: 0;
-    background-color: rgba(0,0,0,0.9);
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 55%;
+  max-height: 100%;
+  top: 0;
+  left: 6em;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.9);
 }
-.modal a{
-    display: block;
-    font-size: 1.5em;
-    text-align: center;
-    left:0;
+.modal a {
+  display: block;
+  font-size: 1.5em;
+  text-align: center;
+  left: 0;
 }
 
 /* Modal close icon */
 a.modal-close-btn {
-    top:0;
-    right:0;
-    color: white;
-    left: 3em;
-    padding: 0;
-    display: inline-block;
+  top: 0;
+  right: 0;
+  color: white;
+  left: 3em;
+  padding: 0;
+  display: inline-block;
 }
-a.modal-close-btn:hover{
-    background-color:inherit;
+a.modal-close-btn:hover {
+  background-color: inherit;
 }
 
 ul.hamburger {
@@ -186,10 +185,6 @@ a.icon-close::after {
   font-size: 1.5em;
 }
 
-
-
-
-
 /*************** Media Queries **************/
 
 /* Tablet */
@@ -227,11 +222,11 @@ a.icon-close::after {
     position: absolute;
     min-width: 160px;
     background: rgba(37, 66, 96, 1);
-  background: linear-gradient(
-    360deg,
-    rgb(138, 172, 231) 0%,
-    rgba(37, 66, 96, 1) 100%
-  );
+    background: linear-gradient(
+      360deg,
+      rgb(138, 172, 231) 0%,
+      rgba(37, 66, 96, 1) 100%
+    );
     opacity: 0.95;
     left: 2em;
     top: 7.4em;
@@ -254,23 +249,23 @@ a.icon-close::after {
     display: none;
   }
 
-  .modal{
+  .modal {
     display: none;
     position: fixed;
     z-index: 1;
     width: 12em;
     max-height: 100%;
-    top:3em;
-    left:17em;
+    top: 3em;
+    left: 17em;
     padding: 0;
-    background-color: rgba(0,0,0,0.9);
-}
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 
-.modal a{
+  .modal a {
     display: block;
     font-size: 1.5em;
     text-align: center;
-    left:0;
+    left: 0;
     top: 1em;
     background-color: black;
     border-radius: 0;
@@ -278,19 +273,16 @@ a.icon-close::after {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
-}
+  }
 
-a.modal-close-btn {
-    top:2em;
+  a.modal-close-btn {
+    top: 2em;
     color: white;
     left: 5em;
     padding: 0;
     position: fixed;
-    background:none;
-}
-
-
-
+    background: none;
+  }
 }
 
 /* Desktop and up */
@@ -352,20 +344,20 @@ a.modal-close-btn {
     display: none;
   }
 
-  .modal{
+  .modal {
     display: none;
     position: absolute;
     z-index: 1;
     width: 12em;
     max-height: 100%;
     margin: 0;
-    top:3em;
-    left:30em;
+    top: 3em;
+    left: 30em;
     padding: 0;
-    background-color: rgba(0,0,0,0.9);
-}
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 
-.modal a{
+  .modal a {
     display: block;
     font-size: 1.5em;
     text-align: center;
@@ -377,17 +369,210 @@ a.modal-close-btn {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
-}
+  }
 
-a.modal-close-btn {
-    top:2em;
+  a.modal-close-btn {
+    top: 2em;
     color: white;
     left: 12em;
     margin: 0;
     position: fixed;
-    background:none;
+    background: none;
+  }
 }
 
 
 
+/* 1440px resolution */
+@media screen and (min-width: 90em) {
+  div.nav-container {
+    background: none;
+  }
+  ul.navbar,
+  #nav {
+    min-width: 100%;
+    max-height: 60px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    box-shadow: none;
+    background: rgba(37, 66, 96, 1);
+  }
+
+  li a,
+  .dropbtn {
+    display: inline-block;
+    position: relative;
+    color: rgb(231, 236, 241);
+    padding: 0.5em;
+    text-decoration: none;
+    font-size: 1.7em;
+  }
+
+  .dropdown-items {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    background: rgba(37, 66, 96, 1);
+    background: linear-gradient(
+      360deg,
+      rgb(138, 172, 231) 0%,
+      rgba(37, 66, 96, 1) 100%
+    );
+    opacity: 0.95;
+    left: 2em;
+    top: 7.4em;
+    text-align: center;
+    padding: 2px;
+  }
+  .dropdown-items a {
+    color: white;
+    padding: 10px 14px;
+    display: inline-block;
+  }
+  div.dropdown-items a:hover {
+    background-color: rgb(117, 121, 121);
+  }
+
+  /* hides burger icon on larger displays */
+  a.icon {
+    display: none;
+  }
+  a.icon-close {
+    display: none;
+  }
+
+  .modal {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 12em;
+    max-height: 100%;
+    margin: 0;
+    top: 3em;
+    left: 42em;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .modal a {
+    display: block;
+    font-size: 1.5em;
+    text-align: center;
+    position: relative;
+    top: 1em;
+    background-color: black;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+
+  a.modal-close-btn {
+    top: 2em;
+    color: white;
+    left: 10em;
+    margin: 0;
+    position: fixed;
+    background: none;
+  }
 }
+
+
+/* 1912px resolution and up */
+
+@media screen and (min-width: 90em) {
+    div.nav-container {
+      background: none;
+    }
+    ul.navbar,
+    #nav {
+      min-width: 100%;
+      max-height: 60px;
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      box-shadow: none;
+      background: rgba(37, 66, 96, 1);
+    }
+  
+    li a,
+    .dropbtn {
+      display: inline-block;
+      position: relative;
+      color: rgb(231, 236, 241);
+      padding: 0.5em;
+      text-decoration: none;
+      font-size: 1.7em;
+    }
+  
+    .dropdown-items {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      background: rgba(37, 66, 96, 1);
+      background: linear-gradient(
+        360deg,
+        rgb(138, 172, 231) 0%,
+        rgba(37, 66, 96, 1) 100%
+      );
+      opacity: 0.95;
+      left: 2em;
+      top: 7.4em;
+      text-align: center;
+      padding: 2px;
+    }
+    .dropdown-items a {
+      color: white;
+      padding: 10px 14px;
+      display: inline-block;
+    }
+    div.dropdown-items a:hover {
+      background-color: rgb(117, 121, 121);
+    }
+  
+    /* hides burger icon on larger displays */
+    a.icon {
+      display: none;
+    }
+    a.icon-close {
+      display: none;
+    }
+  
+    .modal {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      width: 12em;
+      max-height: 100%;
+      margin: 0;
+      top: 3em;
+      left: 55em;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  
+    .modal a {
+      display: block;
+      font-size: 1.5em;
+      text-align: center;
+      position: relative;
+      top: 1em;
+      background-color: black;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+    }
+  
+    a.modal-close-btn {
+      top: 2em;
+      color: white;
+      left: 8em;
+      margin: 0;
+      position: fixed;
+      background: none;
+    }
+  }
