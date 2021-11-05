@@ -2,7 +2,9 @@ const hamburger = document.getElementById("hamburger");
 const closeBtn = document.getElementById("close-btn");
 const menu = document.getElementById("nav");
 const modal = document.getElementById("myModal")
+const modalBtn = document.getElementById("dropbtn-modal-id");
 const modalClose = document.getElementById("m-close-btn");
+
 
 hamburger.addEventListener("click", function () {
   if (!menu.classList.contains('hamburger')) {
@@ -19,6 +21,10 @@ closeBtn.addEventListener("click", function () {
     closeBtn.style.display = 'none'
 });
 
+modalBtn.addEventListener("click", function(){
+    modal.style.display = "inline-block";
+})
+
 modalClose.addEventListener("click", function(){
-        modal.classList.toggle('closed');
+        modal.style.display = 'none';
 })

@@ -13,34 +13,17 @@ div.nav-container {
 .dropdown:hover .dropdown-items {
   display: block;
 }
-li.dropdown-modal:hover .modal{
-    display: inline-block;
-    top:0;
-    left:6em;
-    padding: 0;
-  }
 
-li.dropdown-modal:hover .modal.closed{
-      display: inline-block;
-      top:0;
-      left:6em;
-      padding: 0;
-  }
 
 .modal{
     display: none;
     position: fixed;
     z-index: 1;
-    width: 45%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-}
-.modal.closed{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    width: 45%;
-    height: 100%;
+    width: 55%;
+    max-height: 100%;
+    top:0;
+    left:6em;
+    padding: 0;
     background-color: rgba(0,0,0,0.9);
 }
 .modal a{
@@ -50,9 +33,6 @@ li.dropdown-modal:hover .modal.closed{
     left:0;
 }
 
-/* div#myModal.modal.closed{
-    display: none;
-} */
 /* Modal close icon */
 a.modal-close-btn {
     top:0;
@@ -66,9 +46,9 @@ a.modal-close-btn:hover{
     background-color:inherit;
 }
 
-
 ul.hamburger {
   display: block;
+  height: 800px;
 }
 
 .navbar {
@@ -151,7 +131,6 @@ li.dropdown {
   display: none;
   position: absolute;
   min-width: 160px;
-  /* background-color: rgb(71, 71, 71); */
   background: rgba(37, 66, 96, 1);
   background: linear-gradient(
     360deg,
@@ -221,7 +200,7 @@ a.icon-close::after {
   ul.navbar,
   #nav {
     min-width: 100%;
-    max-height: 50px;
+    max-height: 60px;
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -274,6 +253,44 @@ a.icon-close::after {
   a.icon-close {
     display: none;
   }
+
+  .modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 12em;
+    max-height: 100%;
+    top:3em;
+    left:17em;
+    padding: 0;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal a{
+    display: block;
+    font-size: 1.5em;
+    text-align: center;
+    left:0;
+    top: 1em;
+    background-color: black;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+a.modal-close-btn {
+    top:2em;
+    color: white;
+    left: 5em;
+    padding: 0;
+    position: fixed;
+    background:none;
+}
+
+
+
 }
 
 /* Desktop and up */
@@ -284,7 +301,7 @@ a.icon-close::after {
   ul.navbar,
   #nav {
     min-width: 100%;
-    max-height: 50px;
+    max-height: 60px;
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -334,4 +351,43 @@ a.icon-close::after {
   a.icon-close {
     display: none;
   }
+
+  .modal{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 12em;
+    max-height: 100%;
+    margin: 0;
+    top:3em;
+    left:30em;
+    padding: 0;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal a{
+    display: block;
+    font-size: 1.5em;
+    text-align: center;
+    position: relative;
+    top: 1em;
+    background-color: black;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+a.modal-close-btn {
+    top:2em;
+    color: white;
+    left: 12em;
+    margin: 0;
+    position: fixed;
+    background:none;
+}
+
+
+
 }
