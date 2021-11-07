@@ -1,30 +1,35 @@
 const hamburger = document.getElementById("hamburger");
-const closeBtn = document.getElementById("close-btn");
+const closeBtn = document.getElementById("closebtn");
 const menu = document.getElementById("nav");
-const modal = document.getElementById("myModal")
-const modalBtn = document.getElementById("dropbtn-modal-id");
-const modalClose = document.getElementById("m-close-btn");
+const dropbtn = document.getElementsByClassName("dropbtn");
+const modalClose = document.getElementsByClassName("mclosebtn");
+const listContainer = document.getElementsByClassName("listcontainer")
 
+
+for(let i=0; i < dropbtn.length -1; i++) {
+    dropbtn[i].addEventListener("click", function(){
+        listContainer[i].style.display = "block";
+    })
+}
+
+for(let i=0; i< modalClose.length; i++){
+    modalClose[i].addEventListener("click", function (){
+        listContainer[i].style.display = "none";
+    })
+}
 
 hamburger.addEventListener("click", function () {
-  if (!menu.classList.contains('hamburger')) {
-    menu.className += ' hamburger';
+  if (!menu.classList.contains('block')) {
+    menu.className += ' block';
     closeBtn.style.display = 'block';
   } else {
-    menu.classList.remove('hamburger');
+    menu.classList.remove('block');
     closeBtn.style.display = 'none';
   }
 });
-
 closeBtn.addEventListener("click", function () {
     menu.className = 'navbar'
     closeBtn.style.display = 'none'
 });
 
-modalBtn.addEventListener("click", function(){
-    modal.style.display = "inline-block";
-})
 
-modalClose.addEventListener("click", function(){
-        modal.style.display = 'none';
-})
