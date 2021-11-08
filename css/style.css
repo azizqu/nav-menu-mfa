@@ -34,18 +34,14 @@
   height: 100%;
   background: rgba(37, 66, 96, 1);
   z-index: 1;
-  left: 0;
-  top: 0;
-  text-align: center;
-  font-size: 1em;
-  padding: 2.75em;
-  border-radius: 0.5em;
+  top: -3em;
+  bottom: 0;
+  padding: 0 5.75em 5.75em;
   animation: rotateMenu 400ms ease-in-out forwards;
   transform-origin: top center;
 }
 
 .listcontainer a {
-
   font-size: 2em;
   text-align: center;
   color: #fff;
@@ -58,18 +54,17 @@
 
 /* Modal close icon */
 .mclosebtn {
-  bottom: 11em;
   color: white;
-  bottom: 13em;
-  left: 4em;
-  padding: 0;
-  display: block;
+  bottom: 23.5em;
+  left: 10em;
+  margin: 0;
+  text-decoration: none;
+  display: none;
+  position: absolute;
 }
 .mclosebtn::after {
   content: "X";
-  color: white;
-  font-weight: bold;
-  font-size: 1em;
+  font-size: 0.75em;
 }
 .modal-closebtn:hover {
   background-color: inherit
@@ -81,11 +76,9 @@
 }
 .navbar {
   min-width: 100%;
-  /*max-height: 100%;*/
   height:50em ;
   display: none;
   background: rgba(37, 66, 96, 1);
-  justify-content: center;
   text-align: center;
   list-style-type: none;
   animation: rotateMenu 400ms ease-in-out forwards;
@@ -152,8 +145,6 @@ li a:hover,
 }
 .icon-close::after {
   content: "X";
-  color: white;
-  font-weight: bold;
   font-size: 1.5em;
 }
 

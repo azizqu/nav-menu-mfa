@@ -9,12 +9,16 @@ const listContainer = document.getElementsByClassName("listcontainer")
 for(let i=0; i < dropbtn.length -1; i++) {
     dropbtn[i].addEventListener("click", function(){
         listContainer[i].style.display = "block";
+        modalClose[i].style.display = "inline-block";
+        closeBtn.style.display = "none";
     })
 }
 
 for(let i=0; i< modalClose.length; i++){
     modalClose[i].addEventListener("click", function (){
         listContainer[i].style.display = "none";
+        modalClose[i].style.display = "none"
+        closeBtn.style.display = "block"
     })
 }
 
@@ -31,5 +35,6 @@ closeBtn.addEventListener("click", function () {
     menu.className = 'navbar'
     closeBtn.style.display = 'none'
 });
+
 
 
