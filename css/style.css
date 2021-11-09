@@ -31,10 +31,11 @@
   display: none;
   position: absolute;
   width: 100%;
-  height: 100%;
-  background: rgba(37, 66, 96, 1);
+  height: fit-content;
+  /*background: rgba(37, 66, 96, 1);*/
+  background: rgb(65, 104, 143);
   z-index: 1;
-  top: -3em;
+  top: 0;
   bottom: 0;
   padding: 0 5.75em 5.75em;
   animation: rotateMenu 400ms ease-in-out forwards;
@@ -42,32 +43,28 @@
 }
 
 .listcontainer a {
-  font-size: 2em;
+  font-size: 1.75em;
   text-align: center;
   color: #fff;
   display: inline-block;
+  padding: 6px;
 }
 .droplist{
     list-style:none;
 }
 
-
 /* Modal close icon */
 .mclosebtn {
   color: white;
-  bottom: 23.5em;
-  left: 10em;
+  top:15em;
   margin: 0;
   text-decoration: none;
   display: none;
   position: absolute;
 }
 .mclosebtn::after {
-  content: "X";
-  font-size: 0.75em;
-}
-.modal-closebtn:hover {
-  background-color: inherit
+  content: "^";
+  font-size: 1.50em;
 }
 
 .hamburger {
@@ -159,6 +156,7 @@ li a:hover,
     max-height: 60px;
     display: flex;
     box-shadow: none;
+    justify-content: center;
   }
 
   .navbar > li {margin-right: 1rem}
@@ -182,19 +180,12 @@ li a:hover,
     background: none;
   }
 
-  div.listcontainer a {
-    padding: 10px 14px;
-
-  }
-
   .icon {
     display: none;
   }
   .icon-close {
     display: none;
   }
-
-
 
   div.listcontainer a {
     display: block;
@@ -205,6 +196,7 @@ li a:hover,
     top: 1em;
     background-color: black;
     border-radius: 0;
+    padding: 10px 14px;
   }
 
   .mclosebtn {

@@ -10,7 +10,7 @@ for(let i=0; i < dropbtn.length -1; i++) {
     dropbtn[i].addEventListener("click", function(){
         listContainer[i].style.display = "block";
         modalClose[i].style.display = "inline-block";
-        closeBtn.style.display = "none";
+        // closeBtn.style.display = "none";
     })
 }
 
