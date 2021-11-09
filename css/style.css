@@ -53,20 +53,6 @@
     list-style:none;
 }
 
-/* Modal close icon */
-.mclosebtn {
-  color: white;
-  top:15em;
-  margin: 0;
-  text-decoration: none;
-  display: none;
-  position: absolute;
-}
-.mclosebtn::after {
-  content: "^";
-  font-size: 1.50em;
-}
-
 .hamburger {
   display: block;
   height: 800px;
@@ -130,6 +116,21 @@ li a:hover,
   font-size: 2.5em;
   margin: 0.6rem;
 }
+
+/* Modal close icon */
+.mclosebtn {
+  color: white;
+  top:15em;
+  margin: 0;
+  text-decoration: none;
+  display: none;
+  position: absolute;
+}
+.mclosebtn::after {
+  content: "^";
+  font-size: 1.50em;
+}
+
 /* Close icon hamburger  */
 .icon-close {
   display: none;
@@ -164,6 +165,7 @@ li a:hover,
   li a{
     font-size: 2em;
     line-height: 2em;
+    width: 100%;
   }
 
 
@@ -204,7 +206,7 @@ li a:hover,
     color: white;
     left: 5em;
     padding: 0;
-    position: fixed;
+    position: absolute;
     background: none;
   }
 }

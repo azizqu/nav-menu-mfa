@@ -18,7 +18,7 @@ for(let i=0; i< modalClose.length; i++){
     modalClose[i].addEventListener("click", function (){
         listContainer[i].style.display = "none";
         modalClose[i].style.display = "none"
-        closeBtn.style.display = "block"
+        // closeBtn.style.display = "block"
     })
 }
 
