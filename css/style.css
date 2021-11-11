@@ -8,7 +8,7 @@
     - fix div.listcontainer duplicates in media queries
     - ~no explicit [0, 1] stuff in script make it dynamic~ DONE
     - ~add close modal button functionaility~ DONE
-    - make Dropdown clickable instead of hover
+
 */
 * {
   box-sizing: border-box;
@@ -24,20 +24,28 @@
   height: 60px;
   position: relative;
 }
-/*.dropdown:hover .dropdown-items {*/
-/*  display: block;*/
-/*}*/
 .listcontainer {
   display: none;
   position: absolute;
-  width: 90%;
+  width: 100%;
+  min-height: 100vh;
   background: rgb(65, 104, 143);
   z-index: 1;
-  top: 197%;
+  top: 100%;
   margin-left: 5%;
-  animation: rotateMenu 400ms ease-in-out forwards;
-  transform-origin: top center;
-  padding: 20px;
+  animation: slideList 600ms forwards;
+  padding: 10px;
+}
+
+@keyframes slideList {
+ from{
+   margin-right: 100%;
+   width: 200%;
+ }
+  to{
+    margin-right: 0;
+    width: 90%;
+  }
 }
 
 .listcontainer a {
@@ -90,17 +98,11 @@ li a{
   line-height: 1.7em;
   border-radius: 0.5em;
 }
-li a:hover,
-.dropdown:hover .dropbtn {
-  background-color: rgb(66, 73, 87);
-  transition: all 0.5s ease-in-out;
+
+/* To get rid of hover on mobile. needed to override media query for some reason?*/
+#nav li a:hover {
+  background-color: rgba(37, 66, 96, 1);
 }
-
-
-.modal-items {
-  display: none;
-}
-
 
 .listcontainer a:hover {
   background-color: rgb(117, 121, 121);
@@ -163,18 +165,16 @@ li a:hover,
     width: 100%;
   }
 
-  div.listcontainer {
-    position: absolute;
-    width: 14em;
-    opacity: 0.95;
-    /*left: 18em;*/
-    left:45%;
-    top: 3em;
-    padding: 2px;
-    background: none;
-    margin-left: 0;
-  }
 
+  .listcontainer {
+    opacity: 0.95;
+    left:5%;
+    top: 3em;
+    padding: 8px;
+    background: none;
+    margin: 0;
+
+  }
   .icon {
     display: none;
   }
@@ -182,7 +182,7 @@ li a:hover,
     display: none;
   }
 
-  div.listcontainer li {
+  .listcontainer li {
     display: block;
     position: relative;
     font-size: 1em;
@@ -192,7 +192,7 @@ li a:hover,
     max-height: 20em;
   }
 
-  div.listcontainer a{
+  .listcontainer a{
     margin: 0;
     padding: 8px;
   }
@@ -214,12 +214,10 @@ li a:hover{
 
 /* Desktop and up */
 @media screen and (min-width: 64em) {
-div.listcontainer{
+.listcontainer{
   left: 45%;
   margin-left: 0;
 }
-  div.listcontainer li{
-  }
 
 
 
