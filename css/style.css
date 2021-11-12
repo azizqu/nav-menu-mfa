@@ -17,7 +17,16 @@
   font-family: sans-serif;
 }
 
+ a {
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   -webkit-tap-highlight-color: transparent;
+}
+
 .block {display: block !important}
+
+.box{
+  position: relative;
+}
 
 .nav-container {
   background-color: rgba(37, 66, 96, 1);
@@ -32,24 +41,37 @@
   background: rgb(65, 104, 143);
   z-index: 1;
   top: 100%;
-  margin-left: 5%;
-  animation: slideList 600ms forwards;
   padding: 10px;
 }
 
-@keyframes slideList {
+@keyframes slideOut {
  from{
-   margin-right: 100%;
-   width: 200%;
+   margin-left: -100%;
+
  }
   to{
     margin-right: 0;
-    width: 90%;
+
+  }
+}@keyframes slideIn {
+ from{
+   margin-right: 0;
+
+ }
+  to{
+    margin-left: -100%;
+
   }
 }
+.slideOut{
+  animation: slideOut 600ms forwards;
+}
+ .slideIn{
+   animation: slideIn 600ms forwards;
+ }
+
 
 .listcontainer a {
-  font-size: 1.2em;
   line-height: 1.2em;
   text-align: center;
   color: #fff;
@@ -58,7 +80,8 @@
   text-decoration: none;
 }
 .droplist{
-    list-style:none;
+  list-style:none;
+  transform: translateY(30%);
 }
 
 .hamburger {
@@ -76,6 +99,7 @@
   animation: rotateMenu 400ms ease-in-out forwards;
   transform-origin: top center;
   box-shadow: 10px 5px 5px rgb(121, 119, 119);
+  padding-top:5rem;
 }
 @keyframes rotateMenu {
   0% {
@@ -99,14 +123,17 @@ li a{
   border-radius: 0.5em;
 }
 
-/* To get rid of hover on mobile. needed to override media query for some reason?*/
-#nav li a:hover {
-  background-color: rgba(37, 66, 96, 1);
+
+ .listcontainer a:active,  .navbar a:active{
+  background:none;
+  text-decoration: underline;
 }
 
-.listcontainer a:hover {
-  background-color: rgb(117, 121, 121);
-}
+
+
+/*.listcontainer a:hover {*/
+/*  background-color: rgb(117, 121, 121);*/
+/*}*/
 
 /* Hamburger icon */
 .fa {
@@ -207,7 +234,7 @@ li a{
   }
 }
 
-li a:hover{
+.nav a:hover{
   background-color: rgb(66, 73, 87);
   transition: all 0.5s ease-in-out;
 }

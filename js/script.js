@@ -10,13 +10,22 @@ for(let i=0; i < dropbtn.length; i++) {
     dropbtn[i].addEventListener("click", function(){
         listContainer[i].style.display = "block";
         modalClose[i].style.display = "inline-block";
+        list.className += ' slideOut';
+        if(list.classList.contains('slideIn')){
+            list.classList.remove('slideIn');
+        }
     })
 }
 
 for(let i=0; i< modalClose.length; i++){
     modalClose[i].addEventListener("click", function (){
-        listContainer[i].style.display = "none";
+        // listContainer[i].style.display = "none";
         modalClose[i].style.display = "none"
+        list.className += ' slideIn';
+        if(list.classList.contains('slideOut')){
+            list.classList.remove('slideOut')
+        }
+
     })
 }
 
