@@ -10,10 +10,18 @@ for(let i=0; i < dropbtn.length; i++) {
     dropbtn[i].addEventListener("click", function(){
         listContainer[i].style.display = "block";
         modalClose[i].style.display = "inline-block";
-        list.className += ' slideOut';
+        list.className += ' slideOut'; //for mobile
+
+        list.className += ' slideDown'; //for tablet
+
         if(list.classList.contains('slideIn')){
             list.classList.remove('slideIn');
         }
+
+        if(list.classList.contains('slideUp')){
+            list.classList.remove('slideUp');
+        }
+
     })
 }
 
@@ -21,9 +29,16 @@ for(let i=0; i< modalClose.length; i++){
     modalClose[i].addEventListener("click", function (){
         // listContainer[i].style.display = "none";
         modalClose[i].style.display = "none"
-        list.className += ' slideIn';
+        list.className += ' slideIn'; //for mobile
+
+        list.className += ' slideUp'; //for tablet
+
         if(list.classList.contains('slideOut')){
             list.classList.remove('slideOut')
+        }
+        if(list.classList.contains('slideDown')){
+
+            list.classList.remove('slideDown')
         }
 
     })

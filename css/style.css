@@ -18,7 +18,6 @@
 }
 
  a {
-   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
    -webkit-tap-highlight-color: transparent;
 }
 
@@ -64,10 +63,10 @@
   }
 }
 .slideOut{
-  animation: slideOut 600ms forwards;
+  animation: slideOut 400ms forwards;
 }
  .slideIn{
-   animation: slideIn 600ms forwards;
+   animation: slideIn 400ms forwards;
  }
 
 
@@ -123,17 +122,10 @@ li a{
   border-radius: 0.5em;
 }
 
-
  .listcontainer a:active,  .navbar a:active{
   background:none;
   text-decoration: underline;
 }
-
-
-
-/*.listcontainer a:hover {*/
-/*  background-color: rgb(117, 121, 121);*/
-/*}*/
 
 /* Hamburger icon */
 .fa {
@@ -182,24 +174,76 @@ li a{
     display: flex;
     box-shadow: none;
     justify-content: center;
+    padding-top: 0;
   }
 
-  .navbar > li {margin-right: 1rem}
+  .navbar > li {
+    margin-right: 1rem;
+
+  }
 
   li a{
     font-size: 2em;
-    line-height: 2em;
     width: 100%;
+    margin: 0;
   }
 
 
   .listcontainer {
     opacity: 0.95;
-    left:5%;
-    top: 3em;
-    padding: 8px;
+    padding: 0;
     background: none;
+    top:3.75em;
+    margin-top: 0;
+    width: 100%;
+  }
+
+
+  @keyframes slideDown {
+    from{
+      margin-top: -100%;
+
+    }
+    to{
+      margin-bottom: 0;
+
+    }
+  }
+  @keyframes slideUp {
+    from{
+      margin-bottom: 0;
+    }
+    to{
+      margin-top: -150%;
+    }
+  }
+
+  .slideDown{
+    animation: slideDown 400ms forwards;
+  }
+  .slideUp{
+    animation: slideUp 400ms forwards;
+    margin-top: 0;
+  }
+
+  .content h1{
+    text-align: center;
+    padding: 2px;
+  }
+  .droplist{
+    transform: translateY(0);
+
     margin: 0;
+    position: relative;
+  }
+  .droplist li a{
+    margin-bottom: 0;
+    padding: 4px;
+  }
+  .droplist li{
+    padding: 4px;
+    margin:0;
+
 
   }
   .icon {
@@ -215,14 +259,10 @@ li a{
     font-size: 1em;
     background: rgba(37, 66, 96, 1);
     border-radius: 0;
-    padding: 10px 14px;
+    /*padding: 10px 14px;*/
     max-height: 20em;
   }
 
-  .listcontainer a{
-    margin: 0;
-    padding: 8px;
-  }
 
   .mclosebtn {
     top: 0.25em;
@@ -231,6 +271,7 @@ li a{
     padding: 1px;
     position: absolute;
     background: none;
+    transform: rotate(90deg);
   }
 }
 
@@ -238,6 +279,8 @@ li a{
   background-color: rgb(66, 73, 87);
   transition: all 0.5s ease-in-out;
 }
+
+
 
 /* Desktop and up */
 @media screen and (min-width: 64em) {
