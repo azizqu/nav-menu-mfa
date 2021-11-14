@@ -1,13 +1,7 @@
 /* todo:
-    - fix .dropdwnBtn style make it seperate from li
-    - figure out why padding on right is weird on mobile
-    - fix duplicates styles
-    - line height
     - desktop view position underneath dropdown
-    - get rid of hover for dropdown items
-    - fix div.listcontainer duplicates in media queries
-    - ~no explicit [0, 1] stuff in script make it dynamic~ DONE
-    - ~add close modal button functionaility~ DONE
+    - fix tablet / desktop dropdown modal functionality - currently only works once
+
 
 */
 * {
@@ -214,7 +208,7 @@ li a{
       margin-bottom: 0;
     }
     to{
-      margin-top: -150%;
+      margin-top: -180%;
     }
   }
 

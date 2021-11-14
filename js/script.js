@@ -37,7 +37,6 @@ for(let i=0; i< modalClose.length; i++){
             list.classList.remove('slideOut')
         }
         if(list.classList.contains('slideDown')){
-
             list.classList.remove('slideDown')
         }
 
