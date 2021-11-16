@@ -31,7 +31,8 @@
   position: absolute;
   width: 100%;
   min-height: 100vh;
-  background: rgb(65, 104, 143);
+  /*background: rgb(65, 104, 143);*/
+  background: rgba(37, 66, 96, 0.99);
   z-index: 1;
   top: 100%;
   padding: 10px;
@@ -279,7 +280,6 @@ li a{
 /* Desktop and up */
 @media screen and (min-width: 64em) {
 .listcontainer{
-  left: 45%;
   margin-left: 0;
 }
 
