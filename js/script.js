@@ -8,18 +8,16 @@ const list = document.getElementById("list");
 
 for(let i=0; i < dropbtn.length; i++) {
     dropbtn[i].addEventListener("click", function(){
-        listContainer[i].style.display = "block";
-        modalClose[i].style.display = "inline-block";
-        list.className += ' slideOut'; //for mobile
+        if(list.classList.contains('slideOut')){
+            list.classList.remove('slideOut')
+            list.classList.add('slideIn');
+            listContainer[i].style.display = "none";
 
-        list.className += ' slideDown'; //for tablet
-
-        if(list.classList.contains('slideIn')){
+        }else{
+            listContainer[i].style.display = "block";
+            modalClose[i].style.display = "block";
+            list.classList.add('slideOut');
             list.classList.remove('slideIn');
-        }
-
-        if(list.classList.contains('slideUp')){
-            list.classList.remove('slideUp');
         }
 
     })
@@ -27,19 +25,12 @@ for(let i=0; i < dropbtn.length; i++) {
 
 for(let i=0; i< modalClose.length; i++){
     modalClose[i].addEventListener("click", function (){
-        // listContainer[i].style.display = "none";
         modalClose[i].style.display = "none"
-        list.className += ' slideIn'; //for mobile
-
-        list.className += ' slideUp'; //for tablet
-
-        if(list.classList.contains('slideOut')){
-            list.classList.remove('slideOut')
-        }
-        if(list.classList.contains('slideDown')){
-            list.classList.remove('slideDown')
-        }
-
+        list.classList.add('slideIn');
+        list.classList.remove('slideOut');
+        setTimeout(() => {
+            list.style.display = "none";
+        }, 400);
     })
 }
 

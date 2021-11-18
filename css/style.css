@@ -1,6 +1,5 @@
 /* todo:
-    - desktop view position underneath dropdown
-    - fix tablet / desktop dropdown modal functionality - currently only works once
+
 
 
 */
@@ -34,29 +33,31 @@
   /*background: rgb(65, 104, 143);*/
   background: rgba(37, 66, 96, 0.99);
   z-index: 1;
-  top: 100%;
+  top:0;
   padding: 10px;
 }
 
+
 @keyframes slideOut {
- from{
-   margin-left: -100%;
-
- }
-  to{
-    margin-right: 0;
-
+  from{
+    transform: translateX(-100%);
   }
-}@keyframes slideIn {
- from{
-   margin-right: 0;
-
- }
   to{
-    margin-left: -100%;
+    transform: translateX(0);
 
   }
 }
+@keyframes slideIn {
+  from{
+    /*margin-bottom: 0;*/
+    transform: translateX(0);
+  }
+  to{
+    /*margin-top: -100%;*/
+    transform: translateX(-100%);
+  }
+}
+
 .slideOut{
   animation: slideOut 400ms forwards;
 }
@@ -134,9 +135,9 @@ li a{
 /* Modal close icon */
 .mclosebtn {
   color: white;
-  top:0;
+  top:3.5em;
   right: 0;
-  margin: 8px 8px 0 0;
+  padding: 10px;
   text-decoration: none;
   display: none;
   position: absolute;
@@ -188,58 +189,51 @@ li a{
     opacity: 0.95;
     padding: 0;
     background: none;
-    top:3.75em;
-    margin-top: 0;
-    width: 100%;
+    max-width: 20em;
+    position: relative;
   }
 
 
-  @keyframes slideDown {
+  @keyframes slideOut {
     from{
-      margin-top: -100%;
-
+      transform: translateY(-100%);
     }
     to{
-      margin-bottom: 0;
+      transform: translateY(0);
 
     }
   }
-  @keyframes slideUp {
-    from{
-      margin-bottom: 0;
-    }
-    to{
-      margin-top: -180%;
-    }
-  }
+  @keyframes slideIn {
+     from{
+       /*margin-bottom: 0;*/
+       transform: translateY(0);
+     }
+     to{
+       /*margin-top: -100%;*/
+       transform: translateY(-100%);
+     }
+   }
 
-  .slideDown{
-    animation: slideDown 400ms forwards;
+  div.slideOut{
+    animation: slideOut 400ms forwards;
   }
-  .slideUp{
-    animation: slideUp 400ms forwards;
-    margin-top: 0;
+  div.slideIn{
+    animation: slideIn 400ms forwards;
   }
-
   .content h1{
     text-align: center;
     padding: 2px;
   }
   .droplist{
     transform: translateY(0);
-
-    margin: 0;
-    position: relative;
+    /*min-width:inherit;*/
+  }
+  .droplist li{
+    padding: 0.5em;
+    margin:0;
   }
   .droplist li a{
     margin-bottom: 0;
-    padding: 4px;
-  }
-  .droplist li{
-    padding: 4px;
-    margin:0;
-
-
   }
   .icon {
     display: none;
@@ -253,20 +247,24 @@ li a{
     position: relative;
     font-size: 1em;
     background: rgba(37, 66, 96, 1);
-    border-radius: 0;
-    /*padding: 10px 14px;*/
-    max-height: 20em;
   }
 
-
   .mclosebtn {
-    top: 0.25em;
+    top: 1.5em;
     color: white;
-    right: 0.25em;
-    padding: 1px;
+    left:3.5em;
+    padding: 0 2em 0 0;
+    width: fit-content;
     position: absolute;
     background: none;
     transform: rotate(90deg);
+  }
+  .modal-close{
+    position: relative;
+    display: flex;
+    padding: 1em;
+    background-color: rgba(37, 66, 96, 1);
+
   }
 }
 
