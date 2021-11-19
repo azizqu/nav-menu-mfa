@@ -15,7 +15,9 @@
 }
 
 .block {display: block !important}
-
+.content h1{
+  padding: 0.5em;
+}
 .box{
   position: relative;
 }
@@ -30,12 +32,12 @@
   display: none;
   position: absolute;
   width: 80%;
-  min-height: 100vh;
-  background: rgba(80, 113, 148, 0.99);
+  min-height: fit-content;
+  background: rgba(56, 100, 147, 0.99);
   z-index: 999999;
   top:0;
   padding: 10px;
-  margin:0 10% 15% 10%;
+  margin:15% 10% 15% 10%;
 }
 .blur{
   filter: blur(3px);
@@ -81,7 +83,7 @@
 }
 .droplist{
   list-style:none;
-  transform: translateY(30%);
+  transform: translateY(5%);
 }
 
 .hamburger {
@@ -140,7 +142,7 @@ li a{
 /* Modal close icon */
 .mclosebtn {
   color: white;
-  top:3.5em;
+  top:0.5em;
   right: 0;
   padding: 10px;
   text-decoration: none;
