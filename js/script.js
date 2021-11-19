@@ -5,6 +5,8 @@ const dropbtn = document.getElementsByClassName("dropbtn");
 const modalClose = document.getElementsByClassName("mclosebtn");
 const listContainer = document.getElementsByClassName("listcontainer")
 const list = document.getElementById("list");
+const modalBlur = document.getElementById("modal-blur")
+const navContainerId = document.getElementById("nav-container-id");
 
 for(let i=0; i < dropbtn.length; i++) {
     dropbtn[i].addEventListener("click", function(){
@@ -12,14 +14,16 @@ for(let i=0; i < dropbtn.length; i++) {
             list.classList.remove('slideOut')
             list.classList.add('slideIn');
             listContainer[i].style.display = "none";
-
+            closeBtn.style.display = "none";
         }else{
             listContainer[i].style.display = "block";
             modalClose[i].style.display = "block";
             list.classList.add('slideOut');
             list.classList.remove('slideIn');
+            closeBtn.style.display = "none";
+            // modalBlur.style.display = "block"
+            navContainerId.classList.add('blur');
         }
-
     })
 }
 
@@ -31,6 +35,8 @@ for(let i=0; i< modalClose.length; i++){
         setTimeout(() => {
             list.style.display = "none";
         }, 400);
+        navContainerId.classList.remove('blur');
+        // modalBlur.style.display = "none"
     })
 }
 
@@ -42,6 +48,8 @@ hamburger.addEventListener("click", function () {
     menu.classList.remove('block');
     closeBtn.style.display = 'none';
     list.style.display = 'none';
+    navContainerId.classList.remove('blur');
+    // modalBlur.style.display = "none"
 
 
   }

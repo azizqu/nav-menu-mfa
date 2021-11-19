@@ -25,17 +25,22 @@
   height: 60px;
   position: relative;
 }
+
 .listcontainer {
   display: none;
   position: absolute;
-  width: 100%;
+  width: 80%;
   min-height: 100vh;
-  /*background: rgb(65, 104, 143);*/
-  background: rgba(37, 66, 96, 0.99);
-  z-index: 1;
+  background: rgba(80, 113, 148, 0.99);
+  z-index: 999999;
   top:0;
   padding: 10px;
+  margin:0 10% 15% 10%;
 }
+.blur{
+  filter: blur(3px);
+}
+
 
 
 @keyframes slideOut {
@@ -59,10 +64,10 @@
 }
 
 .slideOut{
-  animation: slideOut 400ms forwards;
+  animation: slideOut 700ms forwards;
 }
  .slideIn{
-   animation: slideIn 400ms forwards;
+   animation: slideIn 700ms forwards;
  }
 
 
@@ -191,6 +196,7 @@ li a{
     background: none;
     max-width: 20em;
     position: relative;
+    margin: 0 auto;
   }
 
 
@@ -219,6 +225,10 @@ li a{
   }
   div.slideIn{
     animation: slideIn 400ms forwards;
+  }
+
+  .blur{
+    filter: none;
   }
   .content h1{
     text-align: center;
@@ -252,7 +262,7 @@ li a{
   .mclosebtn {
     top: 1.5em;
     color: white;
-    left:3.5em;
+    left:8.5em;
     padding: 0 2em 0 0;
     width: fit-content;
     position: absolute;
@@ -278,7 +288,6 @@ li a{
 /* Desktop and up */
 @media screen and (min-width: 64em) {
 .listcontainer{
-  margin-left: 0;
 }
 
 
