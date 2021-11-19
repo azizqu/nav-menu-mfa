@@ -15,9 +15,7 @@
 }
 
 .block {display: block !important}
-.content h1{
-  padding: 0.5em;
-}
+
 .box{
   position: relative;
 }
@@ -34,7 +32,7 @@
   width: 80%;
   min-height: fit-content;
   background: rgba(56, 100, 147, 0.99);
-  z-index: 999999;
+  z-index: 2;
   top:0;
   padding: 10px;
   margin:15% 10% 15% 10%;
@@ -165,6 +163,11 @@ li a{
   font-size: 1.5em;
 }
 
+.content h1{
+  margin: 2px;
+  padding: 2px;
+}
+
 /*************** Media Queries **************/
 
 /* Tablet */
@@ -232,10 +235,7 @@ li a{
   .blur{
     filter: none;
   }
-  .content h1{
-    text-align: center;
-    padding: 2px;
-  }
+
   .droplist{
     transform: translateY(0);
     /*min-width:inherit;*/
@@ -260,7 +260,13 @@ li a{
     font-size: 1em;
     background: rgba(37, 66, 96, 1);
   }
-
+  .content h1{
+    padding: 0.5em;
+    margin: 0.5em;
+    position: absolute;
+    top: 4em;
+    left: 7em;
+  }
   .mclosebtn {
     top: 1.5em;
     color: white;
