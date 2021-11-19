@@ -36,6 +36,7 @@
   top:0;
   padding: 10px;
   margin:15% 10% 15% 10%;
+  overflow: auto;
 }
 .blur{
   filter: blur(3px);
@@ -81,7 +82,8 @@
 }
 .droplist{
   list-style:none;
-  transform: translateY(5%);
+  margin: 4px 0 4px 0;
+  /*transform: translateY(5%);*/
 }
 
 .hamburger {

@@ -7,6 +7,8 @@ const listContainer = document.getElementsByClassName("listcontainer")
 const list = document.getElementById("list");
 const modalBlur = document.getElementById("modal-blur")
 const navContainerId = document.getElementById("nav-container-id");
+const timeoutSpeed = 600;
+
 
 for(let i=0; i < dropbtn.length; i++) {
     dropbtn[i].addEventListener("click", function(){
@@ -34,8 +36,10 @@ for(let i=0; i< modalClose.length; i++){
         list.classList.remove('slideOut');
         setTimeout(() => {
             list.style.display = "none";
-        }, 400);
-        navContainerId.classList.remove('blur');
+            closeBtn.style.display = "block"
+            navContainerId.classList.remove('blur');
+        }, timeoutSpeed);
+
         // modalBlur.style.display = "none"
     })
 }
