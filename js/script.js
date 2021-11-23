@@ -81,9 +81,9 @@ function appendData(data){
     let listContainer = document.getElementById("dropListId");
     for(let i =0; i< data["listItems"].length; i++){
         let listTag = document.createElement("li")
-        let aTag = document.createElement("a")
+        let aTag = document.createElement("a");
         let itemText = document.createTextNode(data["listItems"][i].title)
-
+        aTag.href = data["listItems"][i].href
         aTag.appendChild(itemText);
         listTag.appendChild(aTag);
         listContainer.appendChild(listTag);
