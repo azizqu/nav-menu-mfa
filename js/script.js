@@ -64,9 +64,8 @@ closeBtn.addEventListener("click", function () {
     list.style.display = 'none';
 });
 
+
 // JSON
-
-
 fetch('./DATA.json')
     .then(function (response){
         return response.json();
