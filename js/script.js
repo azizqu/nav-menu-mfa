@@ -16,14 +16,13 @@ for (let i = 0; i < dropbtn.length; i++) {
             list.classList.remove('slideOut')
             list.classList.add('slideIn');
             listContainer[i].style.display = "none";
+            // closeBtn.classList.add('hidden');
             closeBtn.style.display = "none";
         } else {
             listContainer[i].style.display = "block";
             modalClose[i].style.display = "block";
             list.classList.add('slideOut');
             list.classList.remove('slideIn');
-            closeBtn.style.display = "none";
-            // modalBlur.style.display = "block"
             navContainerId.classList.add('blur');
         }
     })
@@ -34,13 +33,12 @@ for (let i = 0; i < modalClose.length; i++) {
         modalClose[i].style.display = "none"
         list.classList.add('slideIn');
         list.classList.remove('slideOut');
+        closeBtn.classList.add('hidden');
+        // closeBtn.style.display = "block";
         setTimeout(() => {
             list.style.display = "none";
-            closeBtn.style.display = "block"
             navContainerId.classList.remove('blur');
         }, timeoutSpeed);
-
-        // modalBlur.style.display = "none"
     })
 }
 
@@ -53,45 +51,100 @@ hamburger.addEventListener("click", function () {
         closeBtn.style.display = 'none';
         list.style.display = 'none';
         navContainerId.classList.remove('blur');
-        // modalBlur.style.display = "none"
 
 
     }
 });
 closeBtn.addEventListener("click", function () {
     menu.className = 'navbar'
-    closeBtn.style.display = 'none'
+    closeBtn.classList.remove('hidden');
     list.style.display = 'none';
 });
 
 
-// JSON
-fetch('./DATA.json')
+// JSON - DATA.JSON
+// fetch('./DATA.json')
+//     .then(function (response){
+//         return response.json();
+//     })
+//     .then((data) => {
+//        appendData(data);
+//         // console.log(data);
+//      //   console.log(data.json());
+//     })
+//     .catch(error => console.log("Error "+error));
+//
+// function appendData(data){
+//     let listContainer = document.getElementById("dropListId");
+//     for(let i =0; i< data["listItems"].length; i++){
+//         let listTag = document.createElement("li")
+//         let aTag = document.createElement("a");
+//         let itemText = document.createTextNode(data["listItems"][i].title)
+//         aTag.href = data["listItems"][i].href
+//
+//         aTag.appendChild(itemText);
+//         listTag.appendChild(aTag);
+//         listContainer.appendChild(listTag);
+//         // console.log(listContainer)
+//     }
+// }
+
+// JSON - data2.json
+
+fetch('./data2.json')
     .then(function (response){
         return response.json();
     })
-    .then(function (data){
-        appendData(data);
-        console.log(data["listItems"][0].title)
+    .then((navData)=>{
+        appendNavData(navData);
+        console.log(navData["navLinks"])
+        // console.log(navData["navLinks"][0].navTitle) //example
     })
-    .catch(error => console.log("Error "+error));
+    .catch(error => console.log("Error: "+error));
 
-function appendData(data){
-    let listContainer = document.getElementById("dropListId");
-    for(let i =0; i< data["listItems"].length; i++){
-        let listTag = document.createElement("li")
-        let aTag = document.createElement("a");
-        let itemText = document.createTextNode(data["listItems"][i].title)
-        aTag.href = data["listItems"][i].href
-        aTag.appendChild(itemText);
-        listTag.appendChild(aTag);
-        listContainer.appendChild(listTag);
-        console.log(listContainer)
+//const menu = document.getElementById("nav");
+function appendNavData(navData){
+    let navMenu = document.getElementById(("nav"))
+    let dropListContainer = document.getElementById("dropListId")
+
+    for(let i=0; i< navData["navLinks"].length; i++){
+        console.log("Stored: "+navData["navLinks"][i]);
+            // console.log(navData["navLinks"][i].length)
+            let listTag = document.createElement("li")
+            let aTagNav = document.createElement("a");
+
+            let listTagDrop = document.createElement(("li"));
+            let aTagDrop = document.createElement("a");
+
+            if(navData["navLinks"][i].dropdown === false){
+                aTagNav.innerHTML += navData["navLinks"][i].navTitle
+                aTagNav.href = navData["navLinks"][i].href
+                aTagNav.className = navData["navLinks"][i].class
+                listTag.appendChild(aTagNav);
+                navMenu.appendChild(listTag);
+
+                // for(let j=0; j< navData["navLinks"][i])
+
+            } else if(navData["navLinks"][i].dropdown === true){
+                aTagNav.innerHTML += navData["navLinks"][i].navTitle
+                aTagNav.href = navData["navLinks"][i].navHref
+                aTagNav.className = navData["navLinks"][i].class
+                listTag.appendChild(aTagNav);
+                navMenu.appendChild(listTag);
+
+                console.log(navData["navLinks"][i]["dropdownItems"])
+                aTagDrop.innerHTML += navData["navLinks"][i]["dropdownItems"].title;
+                aTagDrop.href = navData["navLinks"][i]["dropdownItems"].href;
+                listTagDrop.appendChild(aTagDrop);
+                dropListContainer.appendChild(listTagDrop);
+
+
+
+
+            }
+
+
     }
+
+
 }
-
-//ul list to populate
-
-
-
-
