@@ -36,6 +36,7 @@
   {
     "navTitle": "NAV ITEM 3",
     "dropdown": false,
+    "class": "nav-links",
     "href": "#href3"
   },
   {

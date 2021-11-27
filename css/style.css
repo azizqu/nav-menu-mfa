@@ -85,11 +85,11 @@
   max-height: 90vh;
   transform: translateY(5%);
 }
-.droplist::after{
-  content: '\00a0';
-  transform: translateY(15%);
-  padding-bottom: 2em;
-}
+/*.droplist::after{*/
+/*  content: '\00a0';*/
+/*  transform: translateY(15%);*/
+/*  padding-bottom: 2em;*/
+/*}*/
 
 .hamburger {
   display: block;
@@ -125,7 +125,7 @@ li a{
   position: relative;
   color: rgb(231, 236, 241);
   text-decoration: none;
-  font-size: 1.7em;
+  font-size: 1.5em;
   line-height: 1.7em;
   border-radius: 0.5em;
 }
@@ -152,7 +152,7 @@ li a{
   padding: 10px;
   text-decoration: none;
   display: none;
-  position: absolute;
+  /*position: absolute;*/
 }
 
 /* Close icon hamburger  */
@@ -160,7 +160,7 @@ li a{
   display: none;
   position: absolute;
   top: 0.5em;
-  right: 0;
+  right: 1em;
   color: white;
   padding: 10px;
   text-decoration: none;
