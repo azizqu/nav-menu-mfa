@@ -8,7 +8,7 @@ const modalClose = document.getElementsByClassName("mclosebtn");
 const listContainer = document.getElementsByClassName("listcontainer")
 const list = document.getElementById("list");
 const navContainerId = document.getElementById("nav-container-id");
-const timeoutSpeed = 400;
+const timeoutSpeed = 300;
 
 loadNavItems(items);
 initDropdownItems();
@@ -32,11 +32,6 @@ closeBtn.addEventListener("click", function () {
     closeBtn.classList.remove('hidden');
     list.style.display = 'none';
 });
-
-console.log(items);
-let holdArr = [];
-holdArr = document.getElementsByClassName("droplist");
-console.log(holdArr);
 
 for (let i = 0; i < modalClose.length; i++) {
     modalClose[i].addEventListener("click", function () {
@@ -119,7 +114,7 @@ function initDropdownItems() {
 
             } else {
                 list.style.display = "block";
-                dropList[i].style.display = "block";;
+                dropList[i].style.display = "block";
                 closeModal.style.display = "block";
                 list.classList.add('slideOut');
                 list.classList.remove('slideIn');
