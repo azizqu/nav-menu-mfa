@@ -29,7 +29,8 @@ hamburger.addEventListener("click", function () {
 });
 closeBtn.addEventListener("click", function () {
     menu.className = 'navbar'
-    closeBtn.classList.remove('hidden');
+    // closeBtn.classList.remove('hidden');
+    closeBtn.style.display = 'none';
     list.style.display = 'none';
 });
 

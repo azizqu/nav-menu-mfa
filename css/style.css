@@ -82,9 +82,9 @@
 }
 .droplist{
   list-style:none;
-  margin: 4px 0 4px 0;
+  margin: 0 0 4px 0;
   max-height: 90vh;
-  transform: translateY(5%);
+  /*transform: translateY(5%);*/
 }
 /*.droplist::after{*/
 /*  content: '\00a0';*/
@@ -212,7 +212,7 @@ li a{
   .listcontainer {
     /*opacity: 0.95;*/
     padding: 0;
-    background: none;
+    /*background: none;*/
     max-width: 20em;
     position: relative;
     margin-top: 0;
@@ -255,8 +255,6 @@ li a{
   .droplist{
     transform: translateY(0);
     margin: 0;
-
-    /*min-width:inherit;*/
   }
   .droplist li{
     padding: 0.5em;
@@ -312,11 +310,12 @@ li a{
 .listcontainer{
 }
 
+  .content h1{
+    left: 12.5em;
+  }
 }
 
-.content h1{
-  left: 12.5em;
-}
+
 
 
 
