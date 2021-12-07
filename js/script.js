@@ -30,7 +30,7 @@ hamburger.addEventListener('click', function () {
       //  list.style.display = 'none';
         box.style.display = 'none';
         // navContainerId.classList.remove('blur');
-        blurToggle();
+        // blurToggle();
 
 
     }
