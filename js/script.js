@@ -40,6 +40,7 @@ closeBtn.addEventListener('click', function () {
     for (let i =0; i< listContainer.length; i++){
         listContainer[i].style.display = 'none';
     }
+    blurToggle();
 
 
     // listContainer.forEach((l)=>{l.style.display === 'block'?l.style.display = 'none':l.style.display = 'block'});
@@ -60,7 +61,8 @@ for (let i = 0; i < modalClose.length; i++) {
         }
         setTimeout(() => {
             listContainer[i].style.display = 'none';
-            navContainerId.classList.remove('blur');
+            // navContainerId.classList.remove('blur');
+            blurToggle();
         }, timeoutSpeed);
     })
 }
@@ -167,12 +169,12 @@ function initDropdownItems() {
                     // for (const x in navLinks) {
                     //     navLinks[x].style.filter = 'blur(3px)';
                     // }
-                    dropbtn[i].classList.add('blur');
-
-                    for(let j=0;j<navLinks.length; j++){
-                        navLinks[j].classList.add('blur');
-                    }
-
+                    // dropbtn[i].classList.add('blur');
+                    //
+                    // for(let j=0;j<navLinks.length; j++){
+                    //     navLinks[j].classList.add('blur');
+                    // }
+                    blurToggle();
 
                 }
 
@@ -181,6 +183,27 @@ function initDropdownItems() {
 
     }
 
+}
+function blurToggle(){
+    const navLinks = document.querySelectorAll('.nav-links');
+    const dropbtn = document.querySelectorAll('.dropbtn');
+
+    for(let  i=0; i<dropbtn.length; i++){
+        if(!dropbtn[i].classList.contains('blur')){
+            dropbtn[i].classList.add('blur');
+        } else{
+            dropbtn[i].classList.remove('blur');
+        }
+    }
+
+    for(let j=0;j<navLinks.length; j++){
+        if(!navLinks[j].classList.contains('blur')){
+            navLinks[j].classList.add('blur');
+        } else{
+            navLinks[j].classList.remove('blur');
+        }
+
+    }
 }
 
 
