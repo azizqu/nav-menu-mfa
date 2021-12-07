@@ -226,7 +226,7 @@ li a{
   border-radius: 0.5em;
   /*filter: blur(2px);*/
 }
-.nav-links.blur, .dropbtn.blur{
+.nav-links.blur, .dropbtn.blur, .open-btn.blur{
   filter: blur(3px);
 }
  .listcontainer a:active,  .navbar a:active{

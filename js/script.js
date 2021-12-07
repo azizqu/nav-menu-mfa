@@ -29,7 +29,8 @@ hamburger.addEventListener('click', function () {
         // closeBtn.style.display = 'none';
       //  list.style.display = 'none';
         box.style.display = 'none';
-        navContainerId.classList.remove('blur');
+        // navContainerId.classList.remove('blur');
+        blurToggle();
 
 
     }
@@ -40,7 +41,8 @@ closeBtn.addEventListener('click', function () {
     for (let i =0; i< listContainer.length; i++){
         listContainer[i].style.display = 'none';
     }
-    blurToggle();
+    // blurToggle();
+    closeBtn.style.display = 'none';
 
 
     // listContainer.forEach((l)=>{l.style.display === 'block'?l.style.display = 'none':l.style.display = 'block'});
@@ -53,16 +55,20 @@ for (let i = 0; i < modalClose.length; i++) {
         listContainer[i].classList.add('slideIn');
         listContainer[i].classList.remove('slideOut');
         // closeBtn.classList.add('hidden');
+        closeBtn.style.display = 'block';
+
         const dropList = document.getElementsByClassName('droplist');
         for(let j=0; j < dropList.length; j++){
             if(dropList[j].classList.contains('droplist')){
                 dropList[j].style.display = 'none';
+                // blurToggle();
             }
         }
         setTimeout(() => {
             listContainer[i].style.display = 'none';
             // navContainerId.classList.remove('blur');
             blurToggle();
+            hamburger.classList.remove('blur');
         }, timeoutSpeed);
     })
 }
@@ -141,12 +147,6 @@ function initDropdownItems() {
     console.log(closeModal)
     for (let i = 0; i < dropbtn.length; i++) {
         dropbtn[i].addEventListener('click', function (e) {
-            // e.preventDefault();
-            // e.stopPropagation();
-            // e.stopImmediatePropagation()
-            // console.log(e);
-            // console.log(listContainer);
-         //   listContainer.forEach((l) => {
                 if (listContainer[i].classList.contains('slideOut')) {
                     listContainer[i].classList.remove('slideOut')
                     listContainer[i].classList.add('slideIn');
@@ -160,8 +160,7 @@ function initDropdownItems() {
                     closeModal[i].style.display = 'block';
                     listContainer[i].classList.add('slideOut');
                     listContainer[i].classList.remove('slideIn');
-                    // navContainerId.style.filter = 'blur(3px)'
-                    // navContainerId.classList.add('blur');
+                    closeBtn.style.display = 'none';
 
                     // listContainer[i].style.filter = 'none';
                     // listContainer[i].classList.add('blur');
@@ -174,11 +173,11 @@ function initDropdownItems() {
                     // for(let j=0;j<navLinks.length; j++){
                     //     navLinks[j].classList.add('blur');
                     // }
-                    blurToggle();
+
 
                 }
 
-
+            blurToggle();
         })
 
     }
@@ -188,19 +187,21 @@ function blurToggle(){
     const navLinks = document.querySelectorAll('.nav-links');
     const dropbtn = document.querySelectorAll('.dropbtn');
 
+    hamburger.classList.add('blur');
+
     for(let  i=0; i<dropbtn.length; i++){
-        if(!dropbtn[i].classList.contains('blur')){
-            dropbtn[i].classList.add('blur');
-        } else{
+        if(dropbtn[i].classList.contains('blur')){
             dropbtn[i].classList.remove('blur');
+        } else if(!dropbtn[i].classList.contains('blur')){
+            dropbtn[i].classList.add('blur');
         }
     }
 
     for(let j=0;j<navLinks.length; j++){
-        if(!navLinks[j].classList.contains('blur')){
-            navLinks[j].classList.add('blur');
-        } else{
+        if(navLinks[j].classList.contains('blur')){
             navLinks[j].classList.remove('blur');
+        } else{
+            navLinks[j].classList.add('blur');
         }
 
     }
