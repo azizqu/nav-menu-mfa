@@ -7,6 +7,9 @@ const box = document.getElementById('box');
 const modalClose = document.getElementsByClassName('mclosebtn');
 const listContainer = document.getElementsByClassName('listcontainer')
 //const list = document.getElementById('list');
+
+
+
 const navContainerId = document.getElementById('nav-container-id');
 const timeoutSpeed = 300;
 
@@ -16,10 +19,11 @@ loadNavItems(items);
 
 hamburger.addEventListener('click', function () {
     if (!menu.classList.contains('block')) {
-        menu.className += ' block';
+        // menu.className += ' block';
+        menu.classList.add('block');
         box.style.display = 'block';
         // closeBtn.classList.add()
-        // closeBtn.style.display = 'block';
+        closeBtn.style.display = 'block';
     } else {
         menu.classList.remove('block');
         // closeBtn.style.display = 'none';
@@ -32,7 +36,7 @@ hamburger.addEventListener('click', function () {
 });
 closeBtn.addEventListener('click', function () {
     menu.className = 'navbar'
-    box.style.display = 'none';
+    // box.style.display = 'none';
     for (let i =0; i< listContainer.length; i++){
         listContainer[i].style.display = 'none';
     }
@@ -71,7 +75,8 @@ function loadNavItems(items) {
         aTagNav.innerHTML = items[i].navTitle
         aTagNav.className = items[i].class
         aTagNav.href = items[i].href
-        navListTag.className = 'navItem '+[i+1];
+        // navListTag.className = 'navItem '+[i+1];
+        navListTag.className = 'navItem';
         navListTag.appendChild(aTagNav);
 
         if(items[i].dropdown) {
@@ -130,6 +135,7 @@ function initDropdownItems() {
     const dropbtn = document.getElementsByClassName('dropbtn');
     const dropList = document.getElementsByClassName('droplist');
     const closeModal = document.getElementsByClassName('mclosebtn');
+    const navLinks = document.querySelectorAll('.nav-links');
     console.log(closeModal)
     for (let i = 0; i < dropbtn.length; i++) {
         dropbtn[i].addEventListener('click', function (e) {
@@ -152,11 +158,22 @@ function initDropdownItems() {
                     closeModal[i].style.display = 'block';
                     listContainer[i].classList.add('slideOut');
                     listContainer[i].classList.remove('slideIn');
-                    // navContainerId.style.filter = 'blur(4px)'
+                    // navContainerId.style.filter = 'blur(3px)'
                     // navContainerId.classList.add('blur');
 
                     // listContainer[i].style.filter = 'none';
                     // listContainer[i].classList.add('blur');
+                    // dropbtn[i].classList.add('blur');
+                    // for (const x in navLinks) {
+                    //     navLinks[x].style.filter = 'blur(3px)';
+                    // }
+                    dropbtn[i].classList.add('blur');
+
+                    for(let j=0;j<navLinks.length; j++){
+                        navLinks[j].classList.add('blur');
+                    }
+
+
                 }
 
 
