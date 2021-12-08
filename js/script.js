@@ -5,12 +5,8 @@ const closeBtn = document.getElementById('closebtn');
 const menu = document.getElementById('nav');
 const box = document.getElementById('box');
 const modalClose = document.getElementsByClassName('mclosebtn');
-const listContainer = document.getElementsByClassName('listcontainer')
-//const list = document.getElementById('list');
-
-
-
-const navContainerId = document.getElementById('nav-container-id');
+const listContainer = document.getElementsByClassName('listcontainer');
+const blurOverlay = document.getElementById('blur');
 const timeoutSpeed = 300;
 
 loadNavItems(items);
@@ -19,10 +15,8 @@ loadNavItems(items);
 
 hamburger.addEventListener('click', function () {
     if (!menu.classList.contains('block')) {
-        // menu.className += ' block';
         menu.classList.add('block');
         box.style.display = 'block';
-        // closeBtn.classList.add()
         closeBtn.style.display = 'block';
     } else {
         menu.classList.remove('block');
@@ -56,6 +50,7 @@ for (let i = 0; i < modalClose.length; i++) {
         listContainer[i].classList.remove('slideOut');
         // closeBtn.classList.add('hidden');
         closeBtn.style.display = 'block';
+        blurOverlay.style.display = 'none';
 
         const dropList = document.getElementsByClassName('droplist');
         for(let j=0; j < dropList.length; j++){
@@ -143,8 +138,7 @@ function initDropdownItems() {
     const dropbtn = document.getElementsByClassName('dropbtn');
     const dropList = document.getElementsByClassName('droplist');
     const closeModal = document.getElementsByClassName('mclosebtn');
-    const navLinks = document.querySelectorAll('.nav-links');
-    console.log(closeModal)
+
     for (let i = 0; i < dropbtn.length; i++) {
         dropbtn[i].addEventListener('click', function (e) {
                 if (listContainer[i].classList.contains('slideOut')) {
@@ -161,7 +155,7 @@ function initDropdownItems() {
                     listContainer[i].classList.add('slideOut');
                     listContainer[i].classList.remove('slideIn');
                     closeBtn.style.display = 'none';
-
+                    blurOverlay.style.display = 'block';
                     // listContainer[i].style.filter = 'none';
                     // listContainer[i].classList.add('blur');
                     // dropbtn[i].classList.add('blur');

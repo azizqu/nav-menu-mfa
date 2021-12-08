@@ -78,8 +78,10 @@
   position: absolute;
   width: 100%;
   top: 3.5em;
+  /*filter: blur(4px);*/
   /*z-index: 0;*/
 }
+
 
 .navbar {
   min-width: 100%;
@@ -92,23 +94,59 @@
   transform-origin: top center;
   box-shadow: 10px 5px 5px rgb(121, 119, 119);
   padding-top:5rem;
-  /*z-index: 4;*/
+  z-index: 4;
   position: absolute;
   top: 0;
 
-
 }
-.main-background::before {
-  content: "XXXX";
-  background-color: red;
+/*ul.navbar:first-child{*/
+/*  opacity: 0.99;*/
+/*}*/
+
+.main-background{
   position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
   height: 100vh;
-  width: 100vh;
-  display: block;
-  top: 0;
-  z-index: 0;
-  filter: blur(2px);
+  width: 100vw;
+  background-color: #507194;
+  opacity: 0.7;
+  filter: blur(10px);
+  z-index: 1;
 }
+
+/*.navItem{*/
+/*  z-index: 3;*/
+/*}*/
+
+/*.navItem{*/
+/*  position: absolute;*/
+/*  width:100px ;*/
+/*  line-height: 180px;*/
+
+/*}*/
+
+
+
+
+
+
+
+
+
+/*.main-background::before{*/
+/*  content: ' ';*/
+/*  */
+/*  position: absolute;*/
+/*  height: 100vh;*/
+/*  width: 100vh;*/
+/*  display: block;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  z-index: 0;*/
+/*  filter: blur(10px);*/
+/*}*/
 
 
 .listcontainer {
@@ -123,6 +161,17 @@
   z-index: 4;
   /*backdrop-filter: blur(4px);*/
 }
+
+/*.nav-container::after {*/
+/*  content: ' ';*/
+/*  filter: blur(3px);*/
+/*  z-index: 4;*/
+
+
+/*}*/
+
+
+
 
 /*.main-background{*/
 /*  backdrop-filter: blur(4px);*/
@@ -226,9 +275,11 @@ li a{
   border-radius: 0.5em;
   /*filter: blur(2px);*/
 }
-.nav-links.blur, .dropbtn.blur, .open-btn.blur{
-  filter: blur(3px);
-}
+/*.nav-links.blur, .dropbtn.blur, .open-btn.blur{*/
+/*  filter: blur(3px);*/
+/*}*/
+
+
  .listcontainer a:active,  .navbar a:active{
   background:none;
   text-decoration: underline;
@@ -282,7 +333,15 @@ li a{
 /*************** Media Queries **************/
 
 /* Tablet */
-@media screen and (min-width: 40em){
+@media screen and (min-width: 40em) {
+.nav-container{
+  height:6vh;
+}
+  .box{
+    display: block;
+    position: absolute;
+  }
+
   li{
     position: relative;
   }
@@ -290,6 +349,8 @@ li a{
     max-height: 75px;
     display: flex;
     box-shadow: none;
+    position: absolute;
+    top: 0;
     justify-content: center;
     padding-top: 0;
   }
@@ -330,15 +391,15 @@ li a{
     }
   }
   @keyframes slideIn {
-     from{
-       /*margin-bottom: 0;*/
-       transform: translateY(0);
-     }
-     to{
-       /*margin-top: -100%;*/
-       transform: translateY(-100%);
-     }
-   }
+    from{
+      /*margin-bottom: 0;*/
+      transform: translateY(0);
+    }
+    to{
+      /*margin-top: -100%;*/
+      transform: translateY(-100%);
+    }
+  }
 
   div.slideOut{
     animation: slideOut 400ms forwards;
@@ -407,18 +468,147 @@ li a{
   background-color: rgb(66, 73, 87);
   transition: all 0.5s ease-in-out;
 }
+  /*.nav-container {*/
+  /*  display: block;*/
+  /*  position: relative;*/
+  /*  height: 8vh;*/
+  /*}*/
+
+  /*.open-btn {*/
+  /*  position: relative;*/
+  /*  display: none;*/
+  /*}*/
+
+  /*.navbar {*/
+  /*  display: flex;*/
+  /*  position: relative;*/
+  /*}*/
 
 
+  /*  !*.nav-container{*!*/
+  /*  !*  display: block;*!*/
+  /*  !*  position: relative;*!*/
+  /*  !*  height: 100%;*!*/
+  /*  !*}*!*/
+  /*!*  li{*!*/
+  /*!*    position: relative;*!*/
+  /*!*  }*!*/
+  /*  .navbar {*/
+  /*    max-height: 75px;*/
+  /*    display: flex;*/
+  /*    box-shadow: none;*/
+  /*    justify-content: center;*/
+  /*    padding-top: 0;*/
+  /*  }*/
+  /*!*.navbar > li {*!*/
+  /*!*  margin-right: 1rem;*!*/
+  /*!*}*!*/
+  /*!*  li a{*!*/
+  /*!*    font-size: 1.5em;*!*/
+  /*!*    width: 100%;*!*/
+  /*!*    margin: 0;*!*/
+  /*!*    line-height: 1em;*!*/
+  /*!*    padding: 0.5em;*!*/
+  /*!*  }*!*/
+  /*!*  .listcontainer {*!*/
+  /*!*    !*opacity: 0.95;*!*!*/
+  /*!*    padding: 0;*!*/
+  /*!*    background: none;*!*/
+  /*!*    max-width: 20em;*!*/
+  /*!*    height: 20em;*!*/
+  /*!*    position: relative;*!*/
+  /*!*    margin-top: 0;*!*/
+  /*!*    margin-left: 12em;*!*/
+  /*!*  }*!*/
+  /*!*  @keyframes slideOut {*!*/
+  /*!*    from{*!*/
+  /*!*      transform: translateY(-100%);*!*/
+  /*!*    }*!*/
+  /*!*    to{*!*/
+  /*!*      transform: translateY(0);*!*/
+  /*!*    }*!*/
+  /*!*  }*!*/
+  /*!*  @keyframes slideIn {*!*/
+  /*!*     from{*!*/
+  /*!*       !*margin-bottom: 0;*!*!*/
+  /*!*       transform: translateY(0);*!*/
+  /*!*     }*!*/
+  /*!*     to{*!*/
+  /*!*       !*margin-top: -100%;*!*!*/
+  /*!*       transform: translateY(-100%);*!*/
+  /*!*     }*!*/
+  /*!*   }*!*/
+  /*  div.slideOut{*/
+  /*    animation: slideOut 400ms forwards;*/
+  /*  }*/
+  /*  div.slideIn{*/
+  /*    animation: slideIn 400ms forwards;*/
+  /*  }*/
+  /*!*  .blur{*!*/
+  /*!*    filter: none;*!*/
+  /*!*  }*!*/
+  /*  .droplist{*/
+  /*    transform: translateY(0);*/
+  /*    margin: 0;*/
+  /*    position: absolute;*/
+  /*    top: 0;*/
+  /*    left: 0;*/
+  /*    width: 100%;*/
+  /*  }*/
+  /*  .droplist li{*/
+  /*    padding: 0.5em;*/
+  /*    margin:0;*/
+  /*  }*/
+  /*!*  .icon {*!*/
+  /*!*    display: none;*!*/
+  /*!*  }*!*/
+  /*!*  .icon-close {*!*/
+  /*!*    display: none;*!*/
+  /*!*  }*!*/
+  /*!*  .listcontainer li {*!*/
+  /*!*    display: block;*!*/
+  /*!*    position: relative;*!*/
+  /*!*    font-size: 1em;*!*/
+  /*!*    background: rgba(37, 66, 96, 1);*!*/
+  /*!*  }*!*/
+  /*!*  .content h1{*!*/
+  /*!*    padding: 0.5em;*!*/
+  /*!*    margin: 0.5em;*!*/
+  /*!*    position: absolute;*!*/
+  /*!*    top: 4em;*!*/
+  /*!*    left: 7em;*!*/
+  /*!*  }*!*/
+  /*!*  .mclosebtn {*!*/
+  /*!*    top: 1.5em;*!*/
+  /*!*    color: white;*!*/
+  /*!*    left:8.5em;*!*/
+  /*!*    padding: 0 2em 0 0;*!*/
+  /*!*    width: fit-content;*!*/
+  /*!*    position: absolute;*!*/
+  /*!*    background: none;*!*/
+  /*!*    transform: rotate(90deg);*!*/
+  /*!*  }*!*/
+  /*!*  .modal-close{*!*/
+  /*!*    position: relative;*!*/
+  /*!*    display: flex;*!*/
+  /*!*    padding: 1em;*!*/
+  /*!*    background-color: rgba(37, 66, 96, 1);*!*/
+  /*!*  }*!*/
+  /*!*}*!*/
+  /*!*.nav a:hover{*!*/
+  /*!*  background-color: rgb(66, 73, 87);*!*/
+  /*!*  transition: all 0.5s ease-in-out;*!*/
+  /*!*}*!*/
+  /* Desktop and up */
+  @media screen and (min-width: 64em) {
+    .listcontainer {
+    }
 
-/* Desktop and up */
-@media screen and (min-width: 64em) {
-.listcontainer{
-}
-
-  .content h1{
-    left: 12.5em;
+    .content h1 {
+      left: 12.5em;
+    }
   }
-}
+
 
 
 
