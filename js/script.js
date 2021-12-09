@@ -115,7 +115,7 @@ function loadNavItems(items) {
 
             closeModal.classList.add('modal-close');
             closeIcon.classList.add('fas');
-            closeIcon.classList.add('fa-arrow-left')
+            closeIcon.classList.add('fa-arrow-up')
             closeIcon.classList.add('mclosebtn');
 
             closeModal.appendChild(closeIcon);
