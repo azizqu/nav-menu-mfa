@@ -50,7 +50,7 @@ for (let i = 0; i < modalClose.length; i++) {
         listContainer[i].classList.remove('slideOut');
         // closeBtn.classList.add('hidden');
         closeBtn.style.display = 'block';
-        blurOverlay.style.display = 'none';
+        // blurOverlay.style.display = 'none';
 
         const dropList = document.getElementsByClassName('droplist');
         for(let j=0; j < dropList.length; j++){
@@ -61,9 +61,9 @@ for (let i = 0; i < modalClose.length; i++) {
         }
         setTimeout(() => {
             listContainer[i].style.display = 'none';
-            // navContainerId.classList.remove('blur');
             blurToggle();
             hamburger.classList.remove('blur');
+            menu.classList.remove('blur');
         }, timeoutSpeed);
     })
 }
@@ -104,10 +104,6 @@ function loadNavItems(items) {
                 ulTag.appendChild(listTagDrop);
                 divTagDrop.appendChild(ulTag);
 
-                // list.appendChild(ulTag);
-
-                // navMenu.appendChild(ulTag);
-                //append to newly cvreated ul here
             })
             const divTag = document.createElement('div');
             const closeModal = document.createElement('span');
@@ -115,13 +111,12 @@ function loadNavItems(items) {
 
             closeModal.classList.add('modal-close');
             closeIcon.classList.add('fas');
-            closeIcon.classList.add('fa-arrow-up')
+            closeIcon.classList.add('fa-arrow-left')
             closeIcon.classList.add('mclosebtn');
 
             closeModal.appendChild(closeIcon);
             divTag.classList.add('listcontainer');
             divTag.classList.add('dropdown-items');
-           // divTag.id = 'list';
             navListTag.appendChild(divTag);
             divTag.appendChild(ulTag);
             divTag.appendChild(closeModal)
@@ -155,20 +150,6 @@ function initDropdownItems() {
                     listContainer[i].classList.add('slideOut');
                     listContainer[i].classList.remove('slideIn');
                     closeBtn.style.display = 'none';
-                    blurOverlay.style.display = 'block';
-                    // listContainer[i].style.filter = 'none';
-                    // listContainer[i].classList.add('blur');
-                    // dropbtn[i].classList.add('blur');
-                    // for (const x in navLinks) {
-                    //     navLinks[x].style.filter = 'blur(3px)';
-                    // }
-                    // dropbtn[i].classList.add('blur');
-                    //
-                    // for(let j=0;j<navLinks.length; j++){
-                    //     navLinks[j].classList.add('blur');
-                    // }
-
-
                 }
 
             blurToggle();
@@ -178,27 +159,29 @@ function initDropdownItems() {
 
 }
 function blurToggle(){
-    const navLinks = document.querySelectorAll('.nav-links');
+    const navLinks = document.querySelectorAll('nav-links');
     const dropbtn = document.querySelectorAll('.dropbtn');
 
+    // navLinks.forEach(el => el.classList.add('blur'));
+    menu.classList.add('blur');
     hamburger.classList.add('blur');
 
-    for(let  i=0; i<dropbtn.length; i++){
-        if(dropbtn[i].classList.contains('blur')){
-            dropbtn[i].classList.remove('blur');
-        } else if(!dropbtn[i].classList.contains('blur')){
-            dropbtn[i].classList.add('blur');
-        }
-    }
-
-    for(let j=0;j<navLinks.length; j++){
-        if(navLinks[j].classList.contains('blur')){
-            navLinks[j].classList.remove('blur');
-        } else{
-            navLinks[j].classList.add('blur');
-        }
-
-    }
+    // for(let  i=0; i<dropbtn.length; i++){
+    //     if(dropbtn[i].classList.contains('blur')){
+    //         dropbtn[i].classList.remove('blur');
+    //     } else if(!dropbtn[i].classList.contains('blur')){
+    //         dropbtn[i].classList.add('blur');
+    //     }
+    // }
+    //
+    // for(let j=0;j<navLinks.length; j++){
+    //     if(navLinks[j].classList.contains('blur')){
+    //         navLinks[j].classList.remove('blur');
+    //     } else{
+    //         navLinks[j].classList.add('blur');
+    //     }
+    //
+    // }
 }
 
 

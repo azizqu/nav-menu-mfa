@@ -3,10 +3,10 @@ const navObj = {};
 navObj['jsonItems'] =
 [
     {
-        "navTitle": "NAV ITEM 1",
+        "navTitle": "Google Homepage",
         "dropdown": false,
         "class": "nav-links",
-        "href": "#href1",
+        "href": "https://www.google.com",
         "dropdownItems":[
             {
 
@@ -14,30 +14,30 @@ navObj['jsonItems'] =
         ]
     },
     {
-        "navTitle": "NAV ITEM 2 - DROPDOWN",
+        "navTitle": "NBA Sites",
         "dropdown": true,
         "class": "dropbtn",
         "href": "javascript:void(0)",
         "dropdownItems": [
             {
-                "title": "Item 1",
-                "href": "#href1"
+                "title": "NBA Homepage",
+                "href": "https://nba.com"
             },
             {
-                "title": "Item 2",
-                "href": "#href2"
+                "title": "Toronto Raptors - NBA Page",
+                "href": "https://www.nba.com/raptors"
             },
             {
-                "title": "Item 3",
-                "href": "#href3"
+                "title": "NBA Stats & Reference",
+                "href": "https://www.basketball-reference.com/"
             },
             {
-                "title": "Item 4",
-                "href": "#href4"
+                "title": "ESPN Scoreboard",
+                "href": "https://www.espn.com/nba/scoreboard"
             },
             {
-                "title": "Item 5",
-                "href": "#href5"
+                "title": "NBA Wiki",
+                "href": "https://en.wikipedia.org/wiki/National_Basketball_Association"
             }
         ]
     },

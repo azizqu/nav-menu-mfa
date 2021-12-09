@@ -212,7 +212,7 @@
   }
   to{
     /*margin-top: -100%;*/
-    transform: translateX(-100%);
+    transform: translateX(-125%);
   }
 }
 
@@ -275,9 +275,13 @@ li a{
   border-radius: 0.5em;
   /*filter: blur(2px);*/
 }
-/*.nav-links.blur, .dropbtn.blur, .open-btn.blur{*/
-/*  filter: blur(3px);*/
-/*}*/
+.nav-links.blur, .dropbtn.blur, .open-btn.blur{
+  filter: blur(3px);
+}
+
+.navbar.blur>.navItem >*:not(.listcontainer){
+  filter: blur(4px);
+}
 
 
  .listcontainer a:active,  .navbar a:active{
@@ -428,7 +432,7 @@ li a{
     position: relative;
     top: 0;
     left: 0;
-    width: 100%;
+    width: fit-content;
     z-index: 3;
 
 
@@ -436,6 +440,8 @@ li a{
   .droplist li{
     padding: 0.5em;
     margin:0;
+    min-width: max-content;
+
   }
   .icon {
     display: none;
