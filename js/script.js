@@ -61,7 +61,7 @@ for (let i = 0; i < modalClose.length; i++) {
         }
         setTimeout(() => {
             listContainer[i].style.display = 'none';
-            blurToggle();
+            // blurToggle();
             hamburger.classList.remove('blur');
             menu.classList.remove('blur');
         }, timeoutSpeed);
@@ -151,16 +151,20 @@ function initDropdownItems() {
                     listContainer[i].classList.remove('slideIn');
                     closeBtn.style.display = 'none';
                 }
-
-            blurToggle();
+const matchMedia = window.matchMedia('(max-width: 639px)');
+                if(matchMedia.matches) {
+                    console.log(matchMedia)
+                    lightBoxStyle();
+                }
         })
 
     }
 
 }
-function blurToggle(){
-    const navLinks = document.querySelectorAll('nav-links');
-    const dropbtn = document.querySelectorAll('.dropbtn');
+function lightBoxStyle(){
+    console.log(window);
+
+
 
     // navLinks.forEach(el => el.classList.add('blur'));
     menu.classList.add('blur');
