@@ -438,7 +438,7 @@ li a{
     position: relative;
     top: 0;
     left: 0;
-    width: fit-content;
+    width: 120%;
     z-index: 3;
 
 
@@ -446,9 +446,13 @@ li a{
   .droplist li{
     /*padding: 0.5em;*/
     margin:0;
-    min-width: max-content;
-
+    /*min-width: max-content;*/
+    white-space: normal;
   }
+  .droplist li:hover{
+    background-color: rgb(89, 123, 162);
+  }
+
   .icon {
     display: none;
   }
@@ -480,6 +484,7 @@ li a{
     padding: 1em;
     background-color: rgba(37, 66, 96, 1);
     justify-content: center;
+    width: 120%;
   }
 }
 
