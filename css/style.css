@@ -364,7 +364,7 @@ li a{
     top: -3.5em;
     padding-top: 0;
     z-index: 10;
-    text-align: unset;
+    justify-content: center;
   }
 
   .navbar > li {
@@ -387,14 +387,16 @@ li a{
     padding: 0;
     background: none;
     max-width: 0;
+    min-width: fit-content;
     height: 20em;
-    position: relative;
+    /*position: relative;*/
     /*margin-top: 0;*/
     /*margin-left: 0;*/
     /*margin-right: 0;*/
     margin: 0 0 0 0;
     z-index: 1;
-    top: 0;
+    top: 4.5em;
+
   }
 
 
@@ -483,7 +485,7 @@ li a{
     display: flex;
     padding: 1em;
     background-color: rgba(37, 66, 96, 1);
-    min-width: 250px;
+    /*min-width: 250px;*/
 
   }
 }
