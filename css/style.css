@@ -485,8 +485,7 @@ li a{
     display: flex;
     padding: 1em;
     background-color: rgba(37, 66, 96, 1);
-    /*min-width: 250px;*/
-
+    justify-content: center;
   }
 }
 
