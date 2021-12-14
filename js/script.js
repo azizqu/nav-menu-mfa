@@ -162,30 +162,8 @@ const matchMedia = window.matchMedia('(max-width: 639px)');
 
 }
 function lightBoxStyle(){
-    console.log(window);
-
-
-
-    // navLinks.forEach(el => el.classList.add('blur'));
     menu.classList.add('blur');
     hamburger.classList.add('blur');
-
-    // for(let  i=0; i<dropbtn.length; i++){
-    //     if(dropbtn[i].classList.contains('blur')){
-    //         dropbtn[i].classList.remove('blur');
-    //     } else if(!dropbtn[i].classList.contains('blur')){
-    //         dropbtn[i].classList.add('blur');
-    //     }
-    // }
-    //
-    // for(let j=0;j<navLinks.length; j++){
-    //     if(navLinks[j].classList.contains('blur')){
-    //         navLinks[j].classList.remove('blur');
-    //     } else{
-    //         navLinks[j].classList.add('blur');
-    //     }
-    //
-    // }
 }
 
 

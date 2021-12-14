@@ -369,6 +369,9 @@ li a{
 
   .navbar > li {
     margin-right: 1rem;
+    max-width: 100%;
+    display: inline-block;
+    /*width: 100%;*/
 
 
   }
@@ -386,8 +389,8 @@ li a{
     opacity: 1;
     padding: 0;
     background: none;
-    max-width: 0;
-    min-width: fit-content;
+    /*max-width: 0;*/
+    min-width: 25vw;
     height: 20em;
     /*position: relative;*/
     /*margin-top: 0;*/
@@ -396,7 +399,6 @@ li a{
     margin: 0 0 0 0;
     z-index: 1;
     top: 4.5em;
-
   }
 
 
@@ -438,8 +440,10 @@ li a{
     position: relative;
     top: 0;
     left: 0;
-    width: 120%;
+    /*width: 300%;*/
+    max-width: 300%;
     z-index: 3;
+    /*word-break: break-word;*/
 
 
   }
@@ -459,12 +463,15 @@ li a{
   .icon-close {
     display: none;
   }
-
+.listcontainer a{
+  line-height: 1em;
+}
   .listcontainer li {
     display: block;
     position: relative;
     font-size: 1em;
     background: rgba(37, 66, 96, 1);
+    line-height: normal;
   }
 
   .mclosebtn {
@@ -484,7 +491,7 @@ li a{
     padding: 1em;
     background-color: rgba(37, 66, 96, 1);
     justify-content: center;
-    width: 120%;
+    max-width: 300%;
   }
 }
 
