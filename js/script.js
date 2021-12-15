@@ -136,6 +136,9 @@ function initDropdownItems() {
 
     for (let i = 0; i < dropbtn.length; i++) {
         dropbtn[i].addEventListener('click', function (e) {
+            // listContainer[i].style.display = 'none';
+            // dropList[i].style.display = 'none';
+            console.log(dropList[i])
                 if (listContainer[i].classList.contains('slideOut')) {
                     listContainer[i].classList.remove('slideOut')
                     listContainer[i].classList.add('slideIn');
@@ -151,6 +154,9 @@ function initDropdownItems() {
                     listContainer[i].classList.remove('slideIn');
                     closeBtn.style.display = 'none';
                 }
+            // console.log(listContainer[i]);
+            //
+            //     console.log(listContainer)
 const matchMedia = window.matchMedia('(max-width: 639px)');
                 if(matchMedia.matches) {
                     console.log(matchMedia)
