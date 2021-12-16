@@ -212,15 +212,15 @@
   }
   to{
     /*margin-top: -100%;*/
-    transform: translateX(-125%);
+    transform: translateX(-100%);
   }
 }
 
 .slideOut{
-  animation: slideOut 700ms forwards;
+  animation: slideOut 700ms ease-out;
 }
  .slideIn{
-   animation: slideIn 700ms forwards;
+   animation: slideIn 700ms ease-in;
 
  }
 
@@ -357,21 +357,18 @@ li a{
     position: relative;
   }
   .navbar {
-    max-height: 72px;
-    display: flex;
+    display: block;
     box-shadow: none;
     position: absolute;
     top: -3.5em;
     padding-top: 0;
     z-index: 10;
-    justify-content: center;
+    height: auto;
   }
 
   .navbar > li {
     margin-right: 1rem;
-    max-width: 100%;
     display: inline-block;
-    /*width: 100%;*/
 
 
   }
@@ -380,28 +377,19 @@ li a{
     font-size: 1.5em;
     width: 100%;
     margin: 0;
-    line-height: 1em;
-    padding: 0.5em;
+    line-height: 3em;
   }
+
 
 
   .listcontainer {
     opacity: 1;
     padding: 0;
-    background: none;
-    width: 10em;
-    max-width: 100vw;
-    /*min-width: 25vw;*/
-    height: 20em;
-    /*position: relative;*/
-    /*margin-top: 0;*/
-    /*margin-left: 0;*/
-    /*margin-right: 0;*/
-    margin: 0 0 0 0;
-    z-index: 1;
+    background: rgba(37, 66, 96, 1);
+    width: 15em;
+    margin: 0;
     top: 4.5em;
   }
-
 
   @keyframes slideOut {
     from{
@@ -424,10 +412,10 @@ li a{
   }
 
   div.slideOut{
-    animation: slideOut 400ms forwards;
+    animation: slideOut 700ms ease-out;
   }
   div.slideIn{
-    animation: slideIn 400ms forwards;
+    animation: slideIn 700ms ease-out;
   }
 
   .blur{
@@ -441,8 +429,7 @@ li a{
     position: relative;
     top: 0;
     left: 0;
-    /*width: 300%;*/
-    max-width: 300%;
+    width: 130%;
     z-index: 3;
     /*word-break: break-word;*/
 
@@ -464,9 +451,11 @@ li a{
   .icon-close {
     display: none;
   }
-.listcontainer a{
-  line-height: 1em;
-}
+  .listcontainer a {
+    line-height: 1.5em;
+    text-align: left;
+    padding: 0 1rem;
+  }
   .listcontainer li {
     display: block;
     position: relative;
@@ -474,32 +463,35 @@ li a{
     background: rgba(37, 66, 96, 1);
     line-height: normal;
   }
-
   .mclosebtn {
     top: 0;
     color: white;
-    left: 7.5em;
+    /* left: 7.5em; */
     padding: 0 0 0 0;
-    width: fit-content;
-    /*position: absolute;*/
+    /* width: fit-content; */
+    /* position: absolute; */
     background: none;
     transform: rotate(90deg);
-
   }
-  .modal-close{
+
+  .modal-close {
     position: relative;
-    display: flex;
+    display: block;
     padding: 1em;
     background-color: rgba(37, 66, 96, 1);
-    justify-content: center;
-    max-width: 300%;
+    /* justify-content: center; */
+    /* max-width: 300%; */
+    width: 130%;
+  }
+
+
+  .nav a:hover{
+    background-color: rgb(66, 73, 87);
+    transition: all 0.5s ease-in-out;
   }
 }
 
-.nav a:hover{
-  background-color: rgb(66, 73, 87);
-  transition: all 0.5s ease-in-out;
-}
+
 article.content{
   display: flex;
   justify-content: center;

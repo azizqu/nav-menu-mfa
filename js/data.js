@@ -3,10 +3,10 @@ const navObj = {};
 navObj['jsonItems'] =
 [
     {
-        "navTitle": "Google Homepage",
+        "navTitle": "MicrotekBlue Homepage",
         "dropdown": false,
         "class": "nav-links",
-        "href": "https://www.google.com",
+        "href": "https://www.webdesigndevelopment.ca/",
         "dropdownItems":[
             {
 

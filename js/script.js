@@ -7,7 +7,7 @@ const box = document.getElementById('box');
 const modalClose = document.getElementsByClassName('mclosebtn');
 const listContainer = document.getElementsByClassName('listcontainer');
 const blurOverlay = document.getElementById('blur');
-const timeoutSpeed = 300;
+const timeoutSpeed = 700;
 
 loadNavItems(items);
 
@@ -55,15 +55,14 @@ for (let i = 0; i < modalClose.length; i++) {
         const dropList = document.getElementsByClassName('droplist');
         for(let j=0; j < dropList.length; j++){
             if(dropList[j].classList.contains('droplist')){
-                dropList[j].style.display = 'none';
+                // dropList[j].style.display = 'none';
                 // blurToggle();
             }
         }
         setTimeout(() => {
-            listContainer[i].style.display = 'none';
-            // blurToggle();
             hamburger.classList.remove('blur');
             menu.classList.remove('blur');
+            listContainer[i].style.display = 'none';
         }, timeoutSpeed);
     })
 }
