@@ -367,10 +367,12 @@ li a{
   }
 
   .navbar > li {
-    margin-right: 1rem;
+    margin-right: 2rem;
     display: inline-block;
+  }
 
-
+  .navbar li:hover{
+    text-decoration: underline;
   }
 
   li a{
@@ -443,6 +445,7 @@ li a{
   }
   .droplist li:hover{
     background-color: rgb(89, 123, 162);
+    text-decoration: underline;
   }
 
   .icon {
@@ -462,7 +465,11 @@ li a{
     font-size: 1em;
     background: rgba(37, 66, 96, 1);
     line-height: normal;
+    padding-top: 1em;
   }
+  /*.listcontainer li:hover{*/
+  /*  text-decoration: underline;*/
+  /*}*/
   .mclosebtn {
     top: 0;
     color: white;

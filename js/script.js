@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 const items = navObj.jsonItems;
 const hamburger = document.getElementById('hamburger');
 const closeBtn = document.getElementById('closebtn');
