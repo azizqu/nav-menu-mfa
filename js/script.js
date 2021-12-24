@@ -12,57 +12,36 @@ const timeoutSpeed = 700;
 loadNavItems(items);
 
 
-
 hamburger.addEventListener('click', function () {
-    if (!menu.classList.contains('block')) {
-        menu.classList.add('block');
-        box.style.display = 'block';
-        closeBtn.style.display = 'block';
+    if (!box.classList.contains('block')) {
+        box.classList.add('block');
+        closeBtn.classList.add('block');
     } else {
-        menu.classList.remove('block');
-        // closeBtn.style.display = 'none';
-      //  list.style.display = 'none';
-        box.style.display = 'none';
-        // navContainerId.classList.remove('blur');
-        // blurToggle();
-
-
+        box.classList.remove('block');
+        closeBtn.classList.remove('block');
     }
 });
 closeBtn.addEventListener('click', function () {
-    menu.className = 'navbar'
-    // box.style.display = 'none';
-    for (let i =0; i< listContainer.length; i++){
-        listContainer[i].style.display = 'none';
+    for (let i = 0; i < listContainer.length; i++) {
+        listContainer[i].classList.remove('block');
     }
-    // blurToggle();
-    closeBtn.style.display = 'none';
+    box.classList.remove('block');
+    closeBtn.classList.remove('block');
 
-
-    // listContainer.forEach((l)=>{l.style.display === 'block'?l.style.display = 'none':l.style.display = 'block'});
 
 });
 
 for (let i = 0; i < modalClose.length; i++) {
     modalClose[i].addEventListener('click', function () {
-        modalClose[i].style.display = 'none'
         listContainer[i].classList.add('slideIn');
         listContainer[i].classList.remove('slideOut');
-        // closeBtn.classList.add('hidden');
-        closeBtn.style.display = 'block';
-        // blurOverlay.style.display = 'none';
+        closeBtn.classList.add('block');
 
-        const dropList = document.getElementsByClassName('droplist');
-        for(let j=0; j < dropList.length; j++){
-            if(dropList[j].classList.contains('droplist')){
-                // dropList[j].style.display = 'none';
-                // blurToggle();
-            }
-        }
+
         setTimeout(() => {
             hamburger.classList.remove('blur');
             menu.classList.remove('blur');
-            listContainer[i].style.display = 'none';
+            listContainer[i].classList.remove('block');
         }, timeoutSpeed);
     })
 }
@@ -71,23 +50,20 @@ for (let i = 0; i < modalClose.length; i++) {
 function loadNavItems(items) {
     const navMenu = document.getElementById('nav');
 
-    for(let i=0; i<items.length; i++){
+    for (let i = 0; i < items.length; i++) {
         const navListTag = document.createElement('li');
         const aTagNav = document.createElement('a');
         aTagNav.innerHTML = items[i].navTitle
         aTagNav.className = items[i].class
         aTagNav.href = items[i].href
-        // navListTag.className = 'navItem '+[i+1];
         navListTag.className = 'navItem';
         navListTag.appendChild(aTagNav);
 
-        if(items[i].dropdown) {
+        if (items[i].dropdown) {
             //create the ul container if dropdowns is true
             //add class etc
             const ulTag = document.createElement('ul');
             ulTag.className = 'droplist';
-            ulTag.classList.add([i]);
-            ulTag.style.display = 'none';
 
             const dropdownItems = items[i].dropdownItems;
 
@@ -121,7 +97,7 @@ function loadNavItems(items) {
             divTag.appendChild(closeModal)
 
         }
-            navMenu.appendChild(navListTag);
+        navMenu.appendChild(navListTag);
 
     }
     initDropdownItems();
@@ -135,38 +111,57 @@ function initDropdownItems() {
 
     for (let i = 0; i < dropbtn.length; i++) {
         dropbtn[i].addEventListener('click', function (e) {
-            // listContainer[i].style.display = 'none';
-            // dropList[i].style.display = 'none';
-            console.log(dropList[i])
-                if (listContainer[i].classList.contains('slideOut')) {
-                    listContainer[i].classList.remove('slideOut')
-                    listContainer[i].classList.add('slideIn');
-                    listContainer[i].style.display = 'none';
-                    dropList[i].style.display = 'none';
-                    // closeBtn.style.display = 'none';
+            console.log(this);
+            if (listContainer[i].classList.contains('slideOut')) {
+                listContainer[i].classList.remove('slideOut');
+                listContainer[i].classList.add('slideIn');
+                // menu.classList.add('send-behind');
+                setTimeout(() => {
+                    listContainer[i].classList.remove('block');
+                },701);
+                dropList[i].classList.remove('block');
+                closeBtn.classList.add('block');
 
-                } else {
-                    listContainer[i].style.display = 'block';
-                    dropList[i].style.display = 'block';
-                    closeModal[i].style.display = 'block';
-                    listContainer[i].classList.add('slideOut');
-                    listContainer[i].classList.remove('slideIn');
-                    closeBtn.style.display = 'none';
+
+            } else  {
+                listContainer[i].classList.add('block');
+                // menu.classList.add('send-behind');
+              //  dropList[i].classList.add('block');
+                closeModal[i].classList.add('block');
+                closeBtn.classList.remove('block');
+                console.log(listContainer);
+                for (let j = 0; j < listContainer.length; j++){
+                    if (j !== i) {
+                        listContainer[j].classList.remove('slideOut');
+                        listContainer[j].classList.add('slideIn');
+
+                       setTimeout(() => {
+                           listContainer[j].classList.remove('block');
+                       },701);
+                    }
+
+
+
                 }
-            // console.log(listContainer[i]);
-            //
-            //     console.log(listContainer)
-const matchMedia = window.matchMedia('(max-width: 639px)');
-                if(matchMedia.matches) {
-                    console.log(matchMedia)
-                    lightBoxStyle();
-                }
+                listContainer[i].classList.add('slideOut');
+                // others need to remove slide out
+                // others need to add slide in
+
+
+                listContainer[i].classList.remove('slideIn');
+
+            }
+            const matchMedia = window.matchMedia('(max-width: 639px)');
+            if (matchMedia.matches) {
+                lightBoxStyle();
+            }
         })
 
     }
 
 }
-function lightBoxStyle(){
+
+function lightBoxStyle() {
     menu.classList.add('blur');
     hamburger.classList.add('blur');
 }
