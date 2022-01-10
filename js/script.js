@@ -6,7 +6,6 @@ const menu = document.getElementById('nav');
 const box = document.getElementById('box');
 const modalClose = document.getElementsByClassName('mclosebtn');
 const listContainer = document.getElementsByClassName('listcontainer');
-const blurOverlay = document.getElementById('blur');
 const timeoutSpeed = 700;
 
 loadNavItems(items);
@@ -125,8 +124,6 @@ function initDropdownItems() {
 
             } else  {
                 listContainer[i].classList.add('block');
-                // menu.classList.add('send-behind');
-              //  dropList[i].classList.add('block');
                 closeModal[i].classList.add('block');
                 closeBtn.classList.remove('block');
                 console.log(listContainer);
