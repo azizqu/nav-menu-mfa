@@ -114,7 +114,6 @@ function initDropdownItems() {
             if (listContainer[i].classList.contains('slideOut')) {
                 listContainer[i].classList.remove('slideOut');
                 listContainer[i].classList.add('slideIn');
-                // menu.classList.add('send-behind');
                 setTimeout(() => {
                     listContainer[i].classList.remove('block');
                 },701);
