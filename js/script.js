@@ -59,14 +59,12 @@ function loadNavItems(items) {
         navListTag.appendChild(aTagNav);
 
         if (items[i].dropdown) {
-            //create the ul container if dropdowns is true
-            //add class etc
             const ulTag = document.createElement('ul');
             ulTag.className = 'droplist';
 
             const dropdownItems = items[i].dropdownItems;
 
-            dropdownItems.forEach((item, index) => {
+            dropdownItems.forEach((item) => {
                 const divTagDrop = document.createElement('div');
                 const listTagDrop = document.createElement('li');
                 const aTagDrop = document.createElement('a');
@@ -94,10 +92,8 @@ function loadNavItems(items) {
             navListTag.appendChild(divTag);
             divTag.appendChild(ulTag);
             divTag.appendChild(closeModal)
-
         }
         navMenu.appendChild(navListTag);
-
     }
     initDropdownItems();
 }
@@ -109,43 +105,33 @@ function initDropdownItems() {
     const closeModal = document.getElementsByClassName('mclosebtn');
 
     for (let i = 0; i < dropbtn.length; i++) {
-        dropbtn[i].addEventListener('click', function (e) {
+        dropbtn[i].addEventListener('click', function () {
             console.log(this);
             if (listContainer[i].classList.contains('slideOut')) {
                 listContainer[i].classList.remove('slideOut');
                 listContainer[i].classList.add('slideIn');
                 setTimeout(() => {
                     listContainer[i].classList.remove('block');
-                },701);
+                }, 701);
                 dropList[i].classList.remove('block');
                 closeBtn.classList.add('block');
-
-
-            } else  {
+            } else {
                 listContainer[i].classList.add('block');
                 closeModal[i].classList.add('block');
                 closeBtn.classList.remove('block');
                 console.log(listContainer);
-                for (let j = 0; j < listContainer.length; j++){
+                for (let j = 0; j < listContainer.length; j++) {
                     if (j !== i) {
                         listContainer[j].classList.remove('slideOut');
                         listContainer[j].classList.add('slideIn');
 
-                       setTimeout(() => {
-                           listContainer[j].classList.remove('block');
-                       },701);
+                        setTimeout(() => {
+                            listContainer[j].classList.remove('block');
+                        }, 701);
                     }
-
-
-
                 }
                 listContainer[i].classList.add('slideOut');
-                // others need to remove slide out
-                // others need to add slide in
-
-
                 listContainer[i].classList.remove('slideIn');
-
             }
             const matchMedia = window.matchMedia('(max-width: 639px)');
             if (matchMedia.matches) {
